@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Week 2026 - Cotonou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e3a5f;
+            --accent-blue: #2c5282;
+            --light-blue: #4299e1;
+            --bg-light: #f7fafc;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-blue);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q25 30 50 50 T100 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            background-size: 200px 100px;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-content .date {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-content p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+            margin-top: -4rem;
+        }
+
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Themes Section */
+        .themes {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .themes-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .theme-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .theme-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--light-blue);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .theme-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .theme-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .info-section p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(66,153,225,0.2) 0%, rgba(66,153,225,0.2) 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .submit-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submit-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .submit-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .deadline {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .submit-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-blue);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-logos span {
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .theme-card:nth-child(1) { animation-delay: 0.1s; }
+        .theme-card:nth-child(2) { animation-delay: 0.2s; }
+        .theme-card:nth-child(3) { animation-delay: 0.3s; }
+        .theme-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                💧 Water Week 2026
+            </a>
+            <ul class="nav-links">
+                <li><a href="#themes">Thématiques</a></li>
+                <li><a href="#info">Informations</a></li>
+                <li><a href="#submit">Soumission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="date">📅 3-5 Juin 2026</span>
+                <h1>Water Week 2026</h1>
+                <p class="subtitle">De la Recherche à l'Innovation et au Transfert de Technologies</p>
+                <p>Le Centre d'Excellence d'Afrique pour l'Eau et l'Assainissement (C2EA) de l'Institut National de l'Eau (INE/UAC), en collaboration avec l'Association Internationale des Sciences Hydrologiques (IAHS) et le réseau FRIEND AOC, organise la troisième édition de la Semaine de l'Eau et de l'Assainissement au Palais des Congrès de Cotonou (Bénin).</p>
+                <a href="#submit" class="cta-button">Soumettre un résumé</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1538300342682-cf57afb97285?w=800&auto=format&fit=crop&q=80" alt="Water Conference">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">1500+</span>
+                <div class="stat-label">Participants attendus</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25+</span>
+                <div class="stat-label">Pays représentés</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <div class="stat-label">Conférenciers experts</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section class="themes" id="themes">
+        <div class="section-header">
+            <h2>Thématiques de la Conférence</h2>
+            <p>Quatre axes majeurs seront abordés durant cette édition 2026, reflétant les enjeux critiques de la gestion de l'eau en Afrique et dans le monde.</p>
+        </div>
+        <div class="themes-grid">
+            <div class="theme-card animate-on-scroll">
+                <span class="theme-number">1</span>
+                <h3>Ressources en eau et écosystèmes transfrontaliers</h3>
+                <p>Gestion durable des ressources partagées, coopération internationale, protection des écosystèmes aquatiques et gouvernance des bassins versants transfrontaliers.</p>
+            </div>
+            <div class="theme-card animate-on-scroll">
+                <span class="theme-number">2</span>
+                <h3>Innovations en traitement et réutilisation de l'eau</h3>
+                <p>Technologies avancées d'épuration, réutilisation des eaux usées traitées, dessalement, traitement des eaux industrielles et solutions low-cost pour l'accès à l'eau potable.</p>
+            </div>
+            <div class="theme-card animate-on-scroll">
+                <span class="theme-number">3</span>
+                <h3>Technologies de prévention et de gestion des catastrophes</h3>
+                <p>Systèmes d'alerte précoce, gestion des inondations et sécheresses, résilience climatique, modélisation des risques hydrologiques et stratégies d'adaptation.</p>
+            </div>
+            <div class="theme-card animate-on-scroll">
+                <span class="theme-number">4</span>
+                <h3>Technologies de gestion intelligente de l'eau et agriculture durable</h3>
+                <p>Irrigation de précision, agriculture intelligente face au changement climatique, IoT et capteurs dans la gestion de l'eau, optimisation des ressources en eau agricoles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info">
+        <div class="info-container">
+            <h2>Appel à Communications</h2>
+            <p>Chercheurs, Enseignants-Chercheurs, Professionnels et Étudiants sont invités à soumettre leurs résumés de communication via le lien dédié. Cette édition 2026 met l'accent sur <span class="highlight">de la Recherche à l'Innovation et au Transfert de Technologies</span>, offrant une plateforme unique pour présenter vos travaux novateurs.</p>
+            <p>Les soumissions peuvent porter sur des études de cas, des recherches fondamentales ou appliquées, des innovations technologiques ou des retours d'expérience sur la gestion de l'eau et l'assainissement.</p>
+        </div>
+    </section>
+
+    <!-- Submit Section -->
+    <section class="submit-section" id="submit">
+        <div class="submit-container">
+            <h2>Soumettez votre résumé</h2>
+            <p>Rejoignez la communauté internationale des experts de l'eau et partagez vos recherches lors de Water Week 2026 à Cotonou.</p>
+            <div class="deadline">⏰ Date limite : 20 Mai 2026</div>
+            <br>
+            <a href="#" class="submit-btn">Soumettre un résumé maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-logos">
+                <span>C2EA - INE/UAC</span>
+                <span>IAHS</span>
+                <span>FRIEND AOC</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Water Week - Cotonou, Bénin. Tous droits réservés.</p>
+                <p>Palais des Congrès de Cotonou | contact@waterweek2026.org</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollContent - scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.theme-card').forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.6s ease";
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
