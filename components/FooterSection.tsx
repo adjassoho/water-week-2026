@@ -36,8 +36,8 @@ export default function FooterSection() {
             <div>
               <div className="flex items-center gap-3 mb-5">
                 <img
-                  src="https://i.ibb.co/8nLpXxbm/Logo-INE.png"
-                  alt="INE Logo"
+                  src="/logo.png"
+                  alt="Water Week 2026 Logo"
                   className="w-10 h-10 object-contain"
                 />
                 <div>

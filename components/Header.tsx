@@ -51,8 +51,8 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-lg transition-transform group-hover:scale-105">
               <img
-                src="https://i.ibb.co/8nLpXxbm/Logo-INE.png"
-                alt="INE Logo"
+                src="/logo.png"
+                alt="Water Week 2026 Logo"
                 className="w-full h-full object-contain bg-white p-1"
               />
             </div>
