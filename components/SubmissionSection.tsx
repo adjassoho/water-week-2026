@@ -1,148 +1,157 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import CollapsibleSection from './CollapsibleSection';
 
 export default function SubmissionSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const submissionTypes = [
-    {
-      type: 'Communication orale',
-      icon: (
-        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
-        </svg>
-      ),
-      details: [
-        'Résumé de 300 mots maximum',
-        'Langue : Français ou Anglais',
-        'Présentation de 15 minutes + 5 min de discussion',
-        'Support PowerPoint recommandé',
-      ],
-    },
-    {
-      type: 'Poster',
-      icon: (
-        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v12a2.25 2.25 0 002.25 2.25z" />
-        </svg>
-      ),
-      details: [
-        'Format A0 portrait (841 × 1189 mm)',
-        'Résumé de 250 mots maximum',
-        'Session poster dédiée avec jury',
-        'Meilleurs posters récompensés',
-      ],
-    },
-  ];
-
-  const journals = [
-    { name: 'Proceedings of IAHS', badge: 'SCOPUS' },
-    { name: 'Journal of Water Science', badge: 'SCOPUS' },
-    { name: 'Actes de la Conférence', badge: 'Open Access' },
-  ];
-
   return (
-    <section id="submission" className="relative py-24 sm:py-32 px-4 overflow-hidden" ref={sectionRef}>
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A2E4D] via-[#0A4D68]/95 to-[#088395]" />
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-        backgroundSize: '32px 32px'
-      }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#05BFDB]/5 rounded-full blur-[150px]" />
+    <CollapsibleSection
+      id="submission"
+      title="Soumission"
+      defaultOpen={false}
+    >
+      <div className="py-16 px-4 sm:px-6" style={{ backgroundColor: '#f8f9fa' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Left: Submission Guidelines */}
+            <div>
+              <h3 className="text-3xl font-extrabold mb-4" style={{ color: '#003366' }}>
+                Consignes de Soumission
+              </h3>
+              <span
+                className="inline-block px-4 py-1.5 mb-6 font-bold text-sm rounded"
+                style={{ backgroundColor: '#009966', color: '#FFFFFF' }}
+              >
+                Français & Anglais
+              </span>
+              <p className="mb-8 leading-relaxed" style={{ color: '#334155', fontSize: '15px' }}>
+                Nous accueillons les contributions de recherche originales sur tous les aspects
+                de l&apos;eau et de l&apos;assainissement en Afrique.
+              </p>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="section-label-light mx-auto w-fit">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-            </svg>
-            Soumission
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mt-4 mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-            Soumettez vos{' '}
-            <span className="gradient-text-gold">travaux</span>
-          </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            Partagez vos résultats de recherche avec la communauté scientifique internationale
-          </p>
-        </div>
-
-        {/* Submission Type Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7 mb-14">
-          {submissionTypes.map((item, index) => (
-            <div
-              key={index}
-              className={`glass-card p-7 sm:p-9 hover:bg-white/[0.1] transition-all duration-700 group hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/5 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                }`}
-              style={{ transitionDelay: `${200 + index * 200}ms` }}
-            >
-              <div className="flex items-center gap-4 mb-7">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#05BFDB]/20 to-[#00FFCA]/10 flex items-center justify-center text-[#00FFCA] group-hover:scale-110 transition-transform duration-500">
-                  {item.icon}
+              {/* Oral Presentations */}
+              <div
+                className="p-6 mb-6 rounded-lg"
+                style={{ background: 'linear-gradient(135deg, #003366, #058332)', color: '#FFFFFF' }}
+              >
+                <h4 className="text-xl font-bold mb-3" style={{ color: '#a7f3d0' }}>
+                  Communications Orales
+                </h4>
+                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                  Présentations de 15 minutes suivies de 5 minutes de discussion
+                </p>
+                <div
+                  className="p-4 rounded"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}
+                >
+                  <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    Conditions :<br />
+                    Résumé : 300–500 mots
+                  </p>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {item.type}
-                </h3>
               </div>
-              <ul className="space-y-3.5">
-                {item.details.map((detail, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-white/65 text-sm">
-                    <svg className="w-5 h-5 text-[#00FFCA] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {detail}
-                  </li>
-                ))}
-              </ul>
+
+              {/* Poster Presentations */}
+              <div
+                className="p-6 mb-6 rounded-lg"
+                style={{ background: 'linear-gradient(135deg, #003366, #058332)', color: '#FFFFFF' }}
+              >
+                <h4 className="text-xl font-bold mb-3" style={{ color: '#a7f3d0' }}>
+                  Présentations Poster
+                </h4>
+                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                  Présentations visuelles lors de sessions poster dédiées
+                </p>
+                <div
+                  className="p-4 rounded"
+                  style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}
+                >
+                  <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    Conditions :<br />
+                    Résumé : 300–500 mots, Poster : format A0 (841 × 1189 mm)
+                  </p>
+                </div>
+              </div>
+
+              <Link
+                href="/submission"
+                className="inline-block px-6 py-3 font-bold text-sm no-underline transition-all hover:opacity-90"
+                style={{
+                  border: '2px solid #003366',
+                  borderRadius: '20px',
+                  color: '#003366',
+                }}
+              >
+                Plus de détails
+              </Link>
             </div>
-          ))}
-        </div>
 
-        {/* Publication Opportunities */}
-        <div className={`glass-card p-7 sm:p-9 mb-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}>
-          <h3 className="text-xl font-bold text-white mb-6 text-center" style={{ fontFamily: 'var(--font-heading)' }}>
-            📚 Opportunités de Publication
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {journals.map((journal, index) => (
-              <div key={index} className="group flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 transition-all duration-500">
-                <span className="text-white/80 text-sm font-medium">{journal.name}</span>
-                <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${journal.badge === 'SCOPUS'
-                    ? 'bg-[#D4A843]/20 text-[#F0D78C]'
-                    : 'bg-[#05BFDB]/20 text-[#05BFDB]'
-                  }`}>
-                  {journal.badge}
-                </span>
+            {/* Right: Publication Opportunities + Important Dates */}
+            <div>
+              {/* Publication */}
+              <div
+                className="p-8 rounded-lg mb-8 flex items-start gap-6"
+                style={{ border: '1px solid #e5e7eb', backgroundColor: '#ffffff' }}
+              >
+                <div
+                  className="shrink-0 w-24 h-28 rounded-lg flex flex-col items-center justify-center text-center"
+                  style={{ background: 'linear-gradient(135deg, #003366, #058332)', color: '#FFFFFF' }}
+                >
+                  <span className="text-xs" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                    Publication dans
+                  </span>
+                  <span className="text-sm font-extrabold mt-1">REVUES SCOPUS</span>
+                </div>
+                <div>
+                  <h4 className="text-xl font-extrabold mb-3" style={{ color: '#003366' }}>
+                    Opportunités de Publication
+                  </h4>
+                  <p className="text-sm leading-relaxed" style={{ color: '#334155' }}>
+                    Les auteurs sélectionnés seront invités à soumettre un article complet pour
+                    publication dans des numéros spéciaux de revues indexées SCOPUS, telles que
+                    <em> Hydrological Sciences Journal</em>, <em>Proceedings of IAHS</em>…
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* CTA */}
-        <div className={`text-center transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <a href="/submission" className="btn-gold inline-flex text-lg px-12 py-5 rounded-2xl shadow-2xl shadow-[#D4A843]/20 group">
-            Soumettre un résumé
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          <p className="text-white/30 text-sm mt-4">Date limite : 30 mars 2026</p>
+              {/* Important Dates */}
+              <div className="p-8 rounded-lg" style={{ backgroundColor: '#f0f4f8' }}>
+                <h4 className="text-2xl font-extrabold mb-2 text-center" style={{ color: '#003366' }}>
+                  📅 Dates Importantes
+                </h4>
+                <p className="text-sm text-center mb-6" style={{ color: '#64748b' }}>
+                  Notez ces dates clés pour la soumission et l&apos;inscription
+                </p>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { date: '30 Mars 2026', label: 'Date limite de soumission des résumés' },
+                    { date: '15 Avril 2026', label: 'Notification d\'acceptation (Oral/Poster)' },
+                    { date: '30 Avril 2026', label: 'Date limite d\'inscription anticipée' },
+                    { date: '20 Juin 2026', label: 'Date limite d\'inscription standard' },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="p-4 rounded-lg text-center"
+                      style={{
+                        backgroundColor: '#ffffff',
+                        borderLeft: '4px solid #009966',
+                      }}
+                    >
+                      <div className="font-extrabold mb-1" style={{ color: '#009966', fontSize: '16px' }}>
+                        {item.date}
+                      </div>
+                      <div className="text-xs" style={{ color: '#334155' }}>
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </CollapsibleSection>
   );
 }

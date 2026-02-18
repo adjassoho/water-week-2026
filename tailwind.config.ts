@@ -9,19 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Outfit', 'Inter', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ['Inter', 'Segoe UI', 'sans-serif'],
+        body: ['Inter', 'Segoe UI', 'sans-serif'],
       },
       colors: {
         water: {
-          deep: '#0A2E4D',
-          navy: '#0A4D68',
-          ocean: '#088395',
-          turquoise: '#05BFDB',
-          aqua: '#00FFCA',
-          light: '#E0F7FA',
-          sky: '#87CEEB',
-          foam: '#F0F9FF',
+          primary: '#003366', // ICAR Blue
+          secondary: '#058332', // ICAR Green
+          deep: '#03292e', // ICAR Footer
+          text: '#333333',
+          light: '#f8f9fa',
         },
         gold: {
           DEFAULT: '#D4A843',

@@ -4,7 +4,6 @@ import HighlightsSection from '@/components/HighlightsSection';
 import SpeakersSection from '@/components/SpeakersSection';
 import ThemesSection from '@/components/ThemesSection';
 import SubmissionSection from '@/components/SubmissionSection';
-import ImportantDatesSection from '@/components/ImportantDatesSection';
 import TrainingSessionsSection from '@/components/TrainingSessionsSection';
 import VenueSection from '@/components/VenueSection';
 import FooterSection from '@/components/FooterSection';
@@ -19,7 +18,6 @@ export default function Home() {
         <SpeakersSection />
         <ThemesSection />
         <SubmissionSection />
-        <ImportantDatesSection />
         <TrainingSessionsSection />
         <VenueSection />
       </main>

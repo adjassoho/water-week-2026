@@ -1,19 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-water-deep: #0A2E4D;
-  --color-water-navy: #0A4D68;
-  --color-water-ocean: #088395;
-  --color-water-turquoise: #05BFDB;
-  --color-water-aqua: #00FFCA;
-  --color-water-light: #E0F7FA;
-  --color-water-sky: #87CEEB;
-  --color-water-foam: #F0F9FF;
-  --color-gold: #D4A843;
-  --color-gold-light: #F0D78C;
+  --color-primary: #003366;
+  --color-secondary: #058332;
+  --color-accent: #D4A843;
+  --color-text-main: #333333;
+  --color-text-light: #666666;
+  --color-bg-light: #f8f9fa;
+  --color-footer-bg: #03292e;
 
-  --font-heading: 'Outfit', 'Inter', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* ========================================
@@ -36,8 +33,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #ffffff;
-    color: #1a1a1a;
+    color: var(--color-text-main);
     overflow-x: hidden;
+    line-height: 1.6;
   }
 
   h1,
@@ -47,154 +45,58 @@
   h5,
   h6 {
     font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-weight: 700;
   }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--color-secondary);
+  }
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  color: white;
 }
 
 /* ========================================
    Animations
    ======================================== */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes pulseGlow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(5, 191, 219, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 40px rgba(5, 191, 219, 0.6);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes wave {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes countdownPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-@keyframes gradientShift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 @keyframes marquee {
   0% {
@@ -206,215 +108,18 @@
   }
 }
 
-.partner-marquee {
-  display: flex;
+.animate-marquee {
   animation: marquee 30s linear infinite;
-  will-change: transform;
 }
 
-.partner-marquee:hover {
+.animate-marquee:hover {
   animation-play-state: paused;
 }
 
-.water-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 4s ease-in-out infinite;
+.animate-marquee-logos {
+  animation: marquee 22s linear infinite;
 }
 
-/* ========================================
-   Glassmorphism Utilities
-   ======================================== */
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-}
-
-.glass-card-light {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(10, 77, 104, 0.08);
-}
-
-.glass-dark {
-  background: rgba(10, 46, 77, 0.6);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-}
-
-/* ========================================
-   Gradient Text Utility
-   ======================================== */
-
-.gradient-text {
-  background: linear-gradient(135deg, #0A4D68 0%, #088395 40%, #05BFDB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-gold {
-  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #D4A843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-white {
-  background: linear-gradient(135deg, #ffffff 0%, #E0F7FA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ========================================
-   Premium Button Styles
-   ======================================== */
-
-.btn-primary-water {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: linear-gradient(135deg, #088395 0%, #05BFDB 100%);
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(5, 191, 219, 0.3);
-  text-decoration: none;
-}
-
-.btn-primary-water:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(5, 191, 219, 0.5);
-}
-
-.btn-secondary-water {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: transparent;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 14px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.btn-secondary-water:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: translateY(-3px);
-}
-
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 100%);
-  color: #0A2E4D;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
-  text-decoration: none;
-}
-
-.btn-gold:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.5);
-}
-
-/* ========================================
-   Section Label Styles
-   ======================================== */
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  background: rgba(8, 131, 149, 0.08);
-  border: 1px solid rgba(8, 131, 149, 0.15);
-  border-radius: 100px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #088395;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.section-label-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-/* ========================================
-   Particle / Decorative Dots
-   ======================================== */
-
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(5, 191, 219, 0.4);
-  animation: float 6s ease-in-out infinite;
-}
-
-/* ========================================
-   Custom Scrollbar
-   ======================================== */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f0f9ff;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #088395, #05BFDB);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0A4D68, #088395);
+.animate-marquee-logos:hover {
+  animation-play-state: paused;
 }
