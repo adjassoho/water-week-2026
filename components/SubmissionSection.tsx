@@ -90,7 +90,7 @@ export default function SubmissionSection() {
             <div>
               {/* Publication */}
               <div
-                className="p-8 rounded-lg mb-8 flex items-start gap-6"
+                className="p-6 sm:p-8 rounded-lg mb-8 flex flex-wrap sm:flex-nowrap items-start gap-4 sm:gap-6"
                 style={{ border: '1px solid #e5e7eb', backgroundColor: '#ffffff' }}
               >
                 <div

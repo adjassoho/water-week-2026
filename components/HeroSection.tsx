@@ -65,7 +65,7 @@ export default function HeroSection() {
   return (
     <div
       className="relative flex items-center justify-center overflow-hidden"
-      style={{ height: '950px', fontFamily: 'Inter, sans-serif' }}
+      style={{ minHeight: 'clamp(600px, 100svh, 950px)', fontFamily: 'Inter, sans-serif' }}
     >
       {/* Background Carousel — crossfade */}
       <div className="absolute inset-0 z-0">
@@ -111,22 +111,18 @@ export default function HeroSection() {
       <div className="relative z-10 text-center text-white flex flex-col items-center px-4">
         {/* Date & Location Badge */}
         <div
-          className="inline-flex items-center gap-3 mb-8"
-          style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            borderRadius: '30px',
-            padding: '8px 20px',
-          }}
+          className="inline-flex flex-wrap justify-center items-center gap-2 mb-6 px-4 py-2 rounded-full text-sm"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
         >
-          <span className="flex items-center gap-2" style={{ fontSize: '16px' }}>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            3–5 Juin 2026
+            6–10 Juil. 2026
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.4)' }}>|</span>
-          <span className="flex items-center gap-2" style={{ fontSize: '16px' }}>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <span className="hidden sm:inline" style={{ color: 'rgba(255,255,255,0.4)' }}>|</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -134,13 +130,10 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Conference Logo */}
-        <img src="/logo.png" alt="SEA 2026 Logo" className="h-32 w-auto mb-6" />
-
         {/* Main Title */}
         <h1
           style={{
-            fontSize: '54px',
+            fontSize: 'clamp(26px, 5vw, 54px)',
             fontWeight: 900,
             lineHeight: '1.2',
             letterSpacing: '-1px',
@@ -154,7 +147,7 @@ export default function HeroSection() {
         {/* Subtitle */}
         <p
           style={{
-            fontSize: '24px',
+            fontSize: 'clamp(15px, 3vw, 24px)',
             fontWeight: 700,
             color: '#FFFFFF',
             marginBottom: '30px',
@@ -209,27 +202,27 @@ export default function HeroSection() {
           >
             TEMPS AVANT LA CONFÉRENCE
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             {[
               { value: timeLeft.days, label: 'JOURS' },
               { value: timeLeft.hours, label: 'HEURES' },
-              { value: timeLeft.minutes, label: 'MINUTES' },
-              { value: timeLeft.seconds, label: 'SECONDES' },
+              { value: timeLeft.minutes, label: 'MIN' },
+              { value: timeLeft.seconds, label: 'SEC' },
             ].map((item, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  padding: '15px 20px',
+                  padding: 'clamp(8px, 2vw, 15px) clamp(10px, 3vw, 20px)',
                   borderRadius: '4px',
-                  minWidth: '80px',
+                  minWidth: 'clamp(60px, 18vw, 80px)',
                 }}
               >
-                <span style={{ fontSize: '36px', fontWeight: 700, color: '#FFFFFF' }}>
+                <span style={{ fontSize: 'clamp(22px, 6vw, 36px)', fontWeight: 700, color: '#FFFFFF' }}>
                   {String(item.value).padStart(2, '0')}
                 </span>
-                <span style={{ fontSize: '11px', color: '#FFFFFF', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: 'clamp(9px, 2vw, 11px)', color: '#FFFFFF', textTransform: 'uppercase' }}>
                   {item.label}
                 </span>
               </div>

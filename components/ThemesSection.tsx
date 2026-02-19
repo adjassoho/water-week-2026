@@ -68,7 +68,7 @@ export default function ThemesSection() {
                   >
                     Thème {theme.number}
                   </span>
-                  <span className="font-bold text-lg">{theme.title}</span>
+                  <span className="font-bold text-sm sm:text-base leading-snug">{theme.title}</span>
                 </div>
                 <svg
                   className={`w-5 h-5 shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`}

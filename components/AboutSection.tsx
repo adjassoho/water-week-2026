@@ -29,7 +29,7 @@ export default function AboutSection() {
               Organisée conjointement par le <strong className="text-[#003366]">Centre d'Excellence d'Afrique pour l'Eau et l'Assainissement (C2EA)</strong> et l'<strong className="text-[#003366]">Institut National de l'Eau (INE)</strong>, cette conférence réunit experts, chercheurs et décideurs pour relever les défis hydriques du continent.
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-white font-bold transition-all hover:opacity-90 shadow-md no-underline"
@@ -52,8 +52,8 @@ export default function AboutSection() {
             {/* Main Image */}
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="https://i.ibb.co/LXZ9sXvP/prof.jpg"
-                alt="Conférence sur l'eau"
+                src="/speakers/prof-mama.jpg"
+                alt="Prof. Daouda Mama au Forum Mondial de l'Eau"
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>

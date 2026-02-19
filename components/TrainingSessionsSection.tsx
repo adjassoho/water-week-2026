@@ -9,28 +9,28 @@ export default function TrainingSessionsSection() {
       title: 'Professeur, Faculté des Sciences',
       affiliation: 'Université Mohammed V, Rabat, Maroc',
       session: 'SESSION 1 : Télédétection Intégrée & Techniques Statistiques Multivariées',
-      image: 'https://i.ibb.co/LXZ9sXvP/prof.jpg',
+      image: 'https://icar2026.org/wp-content/uploads/2025/10/Pr-Mounia.jpg',
     },
     {
       name: 'Pr. Tarik Bouramtane',
       title: 'Professeur, Faculté des Sciences',
       affiliation: 'Université Mohammed V, Rabat, Maroc',
       session: 'SESSION 2 : Machine Learning pour la Cartographie des Impacts Hydrologiques',
-      image: 'https://i.ibb.co/rGQVTwSP/eric.jpg',
+      image: 'https://icar2026.org/wp-content/uploads/2025/10/Pr-Tarik.png',
     },
     {
       name: 'Pr. Christel Prudhomme',
       title: 'Experte en hydrologie globale',
       affiliation: 'Centre Européen de Prévision Météorologique, UK',
       session: 'SESSION 3 : Prévision Hydrologique & Système GloFAS',
-      image: 'https://i.ibb.co/cS7tCXdt/Abel.png',
+      image: 'https://icar2026.org/wp-content/uploads/2025/10/Portrait1PrudhommeMay2022-1-scaled-e1760004187720.jpg',
     },
     {
       name: 'Pr. Bertil Nlend',
       title: 'Maître de Conférences, Université de Douala',
       affiliation: 'Vice-Président AISH Afrique, Cameroun',
       session: 'SESSION 4 : Traceurs Isotopiques en Hydrologie',
-      image: 'https://i.ibb.co/1YcqxHSb/bossa.jpg',
+      image: null,
     },
   ];
 
@@ -66,12 +66,16 @@ export default function TrainingSessionsSection() {
                 style={{ borderBottom: index < trainers.length - 1 ? '1px solid #e2e8f0' : 'none' }}
               >
                 {/* Photo */}
-                <div className="shrink-0 w-16 h-16 rounded-full overflow-hidden">
-                  <img
-                    src={trainer.image}
-                    alt={trainer.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="shrink-0 w-16 h-16 rounded-full overflow-hidden bg-[#02345e]/10 flex items-center justify-center">
+                  {trainer.image ? (
+                    <img
+                      src={trainer.image}
+                      alt={trainer.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-2xl">👤</span>
+                  )}
                 </div>
 
                 {/* Info */}
