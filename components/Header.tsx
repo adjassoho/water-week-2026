@@ -1,11 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [articlesOpen, setArticlesOpen] = useState(false);
+  const [mobileArticlesOpen, setMobileArticlesOpen] = useState(false);
+  const articlesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   const navigation = [
@@ -21,6 +24,11 @@ export default function Header() {
     { name: 'Comités', href: '/committee' },
     { name: 'Sponsors', href: '/sponsors' },
     { name: 'Contact', href: '/contact' },
+  ];
+
+  const articles = [
+    { name: 'Édition 2024', href: 'https://piahs.copernicus.org/articles/388/index.html' },
+    { name: 'Édition 2025', href: 'https://piahs.copernicus.org/articles/389/index.html' },
   ];
 
   return (
@@ -59,6 +67,59 @@ export default function Header() {
               </Link>
             );
           })}
+
+          {/* Nos articles dropdown */}
+          <div
+            ref={articlesRef}
+            className="relative"
+            onMouseEnter={() => setArticlesOpen(true)}
+            onMouseLeave={() => setArticlesOpen(false)}
+          >
+            <button
+              className="flex items-center gap-1 no-underline transition-colors bg-transparent border-0 cursor-pointer"
+              style={{
+                color: '#334155',
+                fontSize: '14.4px',
+                fontWeight: 500,
+                padding: '8px 12px',
+                fontFamily: 'Inter, sans-serif',
+              }}
+            >
+              Nos articles
+              <svg
+                className="w-3.5 h-3.5 transition-transform"
+                style={{ transform: articlesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {articlesOpen && (
+              <div
+                className="absolute top-full left-0 bg-white shadow-lg rounded border border-gray-100 py-1 z-50"
+                style={{ minWidth: '160px' }}
+              >
+                {articles.map((article) => (
+                  <a
+                    key={article.name}
+                    href={article.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block no-underline px-4 py-2 transition-colors hover:bg-gray-50"
+                    style={{
+                      color: '#334155',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      fontFamily: 'Inter, sans-serif',
+                    }}
+                  >
+                    {article.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -99,6 +160,39 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Nos articles — mobile accordion */}
+            <button
+              onClick={() => setMobileArticlesOpen(!mobileArticlesOpen)}
+              className="flex items-center justify-between w-full px-4 py-3 rounded transition-colors bg-transparent border-0 cursor-pointer text-left"
+              style={{ color: '#334155', fontSize: '15px', fontWeight: 500 }}
+            >
+              Nos articles
+              <svg
+                className="w-4 h-4 transition-transform"
+                style={{ transform: mobileArticlesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {mobileArticlesOpen && (
+              <div className="pl-4 flex flex-col space-y-1">
+                {articles.map((article) => (
+                  <a
+                    key={article.name}
+                    href={article.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="no-underline px-4 py-2 rounded transition-colors"
+                    style={{ color: '#334155', fontSize: '14px', fontWeight: 500 }}
+                  >
+                    {article.name}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
