@@ -6,21 +6,30 @@ import ProgramTabs from '@/components/ProgramTabs';
 
 const trainingDays = [
   {
-    day: 'Vendredi 10 juillet',
+    day: 'Tuesday, October 20 — Parallel Sessions',
     sessions: [
-      { num: 1, title: 'Télédétection Intégrée et Techniques Statistiques Multivariées' },
-      { num: 2, title: 'Apprentissage Automatique pour la Cartographie des Impacts Hydrologiques' },
-      { num: 3, title: 'Intégration des Données LiDAR pour la Surveillance à Haute Résolution' },
-      { num: 4, title: 'Prévision Hydrologique et GloFAS — Copernicus' },
+      { num: 1, title: 'Digital Tools and Integrated Water Resources Management' },
+      { num: 2, title: 'Precision Agriculture and Sustainable Agricultural Water Management' },
+      { num: 3, title: 'Digital Innovation for Urban Water and Sanitation' },
+      { num: 4, title: 'Open Data and Water Governance' },
     ],
   },
   {
-    day: 'Samedi 11 juillet',
+    day: 'Wednesday, October 21 — Parallel Sessions',
     sessions: [
-      { num: 5, title: 'Traceurs Géochimiques en Hydrologie et Écohydrologie' },
-      { num: 6, title: 'Imagerie Radar pour la Surveillance des Rivières Non Jaugées' },
-      { num: 7, title: 'Apprentissage Profond pour la Prédiction des Séries Temporelles' },
-      { num: 8, title: 'LiDAR et Photogrammétrie pour la Numérisation du Terrain' },
+      { num: 5, title: 'AI and Big Data for Water Risk Management' },
+      { num: 6, title: 'Participatory Science and Co-production of Knowledge' },
+      { num: 7, title: 'Intelligent Adaptive Learning Systems and Academic Performance' },
+      { num: 8, title: 'Educational Data for Planning and Decision-making' },
+    ],
+  },
+  {
+    day: 'Thursday, October 22 — Parallel Sessions',
+    sessions: [
+      { num: 9, title: 'Sustainable and Equitable Digital Educational Ecosystems' },
+      { num: 10, title: 'Smart Sludge Treatment and By-product Valorisation' },
+      { num: 11, title: 'Decentralised Wastewater Management Technologies' },
+      { num: 12, title: 'Membrane Modelling and Machine Learning for Water Networks' },
     ],
   },
 ];
@@ -44,13 +53,13 @@ export default function ProgramPage() {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider mb-4"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            PROGRAMME
+            Conference <span className="font-accent italic font-medium">Program</span>
           </h1>
           <div className="w-20 h-1 bg-white/30 mx-auto rounded-full mb-6" />
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Découvrez le planning détaillé des conférences, ateliers et événements de la Semaine de l'Eau 2026.
+            Discover the detailed schedule of conferences, workshops, and events for Water Week 2026.
           </p>
         </div>
       </div>
@@ -59,11 +68,11 @@ export default function ProgramPage() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#303a4d] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-              SEA 2026 : Programme de la Conférence
+            <h2 className="text-3xl font-bold text-[#303a4d] mb-2" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+              SEA 2026 : Conference Program
             </h2>
             <p className="text-gray-500">
-              6 — 9 juillet 2026 · Amphithéâtre Bel Mahi & Auditoriums
+              October 20 — 22, 2026 · Palais des Congrès, Cotonou, Benin
             </p>
           </div>
 
@@ -75,11 +84,11 @@ export default function ProgramPage() {
       <div className="py-16 bg-[#f9fafb] border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#303a4d] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-              SEA 2026 : Programme de Formation
+            <h2 className="text-3xl font-bold text-[#303a4d] mb-2" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+              SEA 2026 : Thematic Parallel Sessions
             </h2>
             <p className="text-gray-500">
-              10 — 11 juillet 2026 · Sessions de Formation Spécialisées
+              October 20 — 22, 2026 · 4 thematic streams, 12 sessions
             </p>
           </div>
 
@@ -87,7 +96,7 @@ export default function ProgramPage() {
             {trainingDays.map((day, i) => (
               <div key={i} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="px-6 py-4 bg-gray-50 border-b border-gray-100">
-                  <h3 className="text-xl font-bold text-[#303a4d]" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <h3 className="text-xl font-bold text-[#303a4d]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                     {day.day}
                   </h3>
                 </div>

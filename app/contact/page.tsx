@@ -28,11 +28,11 @@ export default function ContactPage() {
                 setForm({ name: '', email: '', subject: '', message: '' });
             } else {
                 setStatus('error');
-                setErrorMsg(data.error || 'Une erreur est survenue.');
+                setErrorMsg(data.error || 'An error occurred.');
             }
         } catch {
             setStatus('error');
-            setErrorMsg('Impossible de contacter le serveur. Vérifiez votre connexion.');
+            setErrorMsg('Could not connect to the server. Please check your internet connection.');
         }
     }
 
@@ -47,9 +47,9 @@ export default function ContactPage() {
                 <div className="container mx-auto px-4 text-center">
                     <h1
                         className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider"
-                        style={{ fontFamily: 'var(--font-heading)' }}
+                        style={{ fontFamily: 'DM Sans, sans-serif' }}
                     >
-                        CONTACT
+                        Contact <span className="font-accent italic font-medium">Us</span>
                     </h1>
                 </div>
             </div>
@@ -68,15 +68,15 @@ export default function ContactPage() {
                                             className="w-1 h-8 rounded-full"
                                             style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
                                         />
-                                        <h2 className="text-xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                                            Contactez-nous
+                                        <h2 className="text-xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                                            Contact Info
                                         </h2>
                                     </div>
 
                                     {/* Email */}
                                     <a
-                                        href="mailto:audace@aims.ac.za"
-                                        className="flex items-center gap-3 group mb-6"
+                                        href="mailto:c2eaineuac@gmail.com"
+                                        className="flex items-center gap-3 group mb-4"
                                     >
                                         <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(5,131,50,0.1)' }}>
                                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#058332" strokeWidth={1.8}>
@@ -84,12 +84,27 @@ export default function ContactPage() {
                                             </svg>
                                         </div>
                                         <span className="text-[#02345e] font-medium text-sm group-hover:text-[#058332] transition-colors">
-                                            audace@aims.ac.za
+                                            c2eaineuac@gmail.com
+                                        </span>
+                                    </a>
+
+                                    {/* Phone */}
+                                    <a
+                                        href="tel:+22901979879250"
+                                        className="flex items-center gap-3 group mb-6"
+                                    >
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(2,52,94,0.07)' }}>
+                                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#02345e" strokeWidth={1.8}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-[#02345e] font-medium text-sm group-hover:text-[#058332] transition-colors">
+                                            +229 01 97 98 79 25
                                         </span>
                                     </a>
 
                                     {/* Location */}
-                                    <div className="flex items-start gap-3 mb-6">
+                                    <div className="flex items-start gap-3 mb-4">
                                         <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(2,52,94,0.07)' }}>
                                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#02345e" strokeWidth={1.8}>
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -97,16 +112,29 @@ export default function ContactPage() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <p className="text-[#02345e] font-semibold text-sm">Palais des Congrès de Cotonou</p>
-                                            <p className="text-gray-400 text-xs mt-0.5">Cotonou, Bénin</p>
-                                            <p className="text-gray-400 text-xs">6–10 Juillet 2026</p>
+                                            <p className="text-[#02345e] font-semibold text-sm">Palais des Congrès, Cotonou</p>
+                                            <p className="text-gray-400 text-xs mt-0.5">Cotonou, Benin</p>
+                                            <p className="text-gray-400 text-xs">October 20–22, 2026</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Organiser */}
+                                    <div className="flex items-start gap-3 mb-6">
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(5,131,50,0.1)' }}>
+                                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#058332" strokeWidth={1.8}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p className="text-[#02345e] font-semibold text-sm">INE / C2EA — UAC</p>
+                                            <p className="text-gray-400 text-xs mt-0.5">01 B.P. 526, Cotonou — Benin</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Social */}
                                 <div>
-                                    <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Réseaux sociaux</p>
+                                    <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">Social Media</p>
                                     <div className="flex gap-3">
                                         <a
                                             href="https://facebook.com"
@@ -141,8 +169,8 @@ export default function ContactPage() {
                                         className="w-1 h-8 rounded-full"
                                         style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
                                     />
-                                    <h2 className="text-xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                                        Envoyer un message
+                                    <h2 className="text-xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                                        Send a Message
                                     </h2>
                                 </div>
 
@@ -153,13 +181,13 @@ export default function ContactPage() {
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                             </svg>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#02345e]">Message envoyé !</h3>
-                                        <p className="text-gray-500 text-sm">Nous vous répondrons dans les meilleurs délais.</p>
+                                        <h3 className="text-xl font-bold text-[#02345e]">Message sent!</h3>
+                                        <p className="text-gray-500 text-sm">We will get back to you as soon as possible.</p>
                                         <button
                                             onClick={() => setStatus('idle')}
                                             className="mt-2 text-[#058332] text-sm font-semibold hover:underline"
                                         >
-                                            Envoyer un autre message
+                                            Send another message
                                         </button>
                                     </div>
                                 ) : (
@@ -167,7 +195,7 @@ export default function ContactPage() {
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-xs font-semibold text-[#02345e] mb-1.5" htmlFor="name">
-                                                    Nom complet <span className="text-red-400">*</span>
+                                                    Full Name <span className="text-red-400">*</span>
                                                 </label>
                                                 <input
                                                     id="name"
@@ -176,13 +204,13 @@ export default function ContactPage() {
                                                     required
                                                     value={form.name}
                                                     onChange={handleChange}
-                                                    placeholder="Jean Dupont"
+                                                    placeholder="John Doe"
                                                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-[#02345e] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#058332]/30 focus:border-[#058332] transition-all"
                                                 />
                                             </div>
                                             <div>
                                                 <label className="block text-xs font-semibold text-[#02345e] mb-1.5" htmlFor="email">
-                                                    Adresse email <span className="text-red-400">*</span>
+                                                    Email Address <span className="text-red-400">*</span>
                                                 </label>
                                                 <input
                                                     id="email"
@@ -191,7 +219,7 @@ export default function ContactPage() {
                                                     required
                                                     value={form.email}
                                                     onChange={handleChange}
-                                                    placeholder="jean@exemple.com"
+                                                    placeholder="john@example.com"
                                                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-[#02345e] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#058332]/30 focus:border-[#058332] transition-all"
                                                 />
                                             </div>
@@ -199,7 +227,7 @@ export default function ContactPage() {
 
                                         <div>
                                             <label className="block text-xs font-semibold text-[#02345e] mb-1.5" htmlFor="subject">
-                                                Objet
+                                                Subject
                                             </label>
                                             <input
                                                 id="subject"
@@ -207,7 +235,7 @@ export default function ContactPage() {
                                                 type="text"
                                                 value={form.subject}
                                                 onChange={handleChange}
-                                                placeholder="Objet du message"
+                                                placeholder="Subject of your message"
                                                 className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-[#02345e] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#058332]/30 focus:border-[#058332] transition-all"
                                             />
                                         </div>
@@ -223,7 +251,7 @@ export default function ContactPage() {
                                                 rows={5}
                                                 value={form.message}
                                                 onChange={handleChange}
-                                                placeholder="Écrivez votre message ici…"
+                                                placeholder="Write your message here..."
                                                 className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-[#02345e] placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#058332]/30 focus:border-[#058332] transition-all resize-none"
                                             />
                                         </div>
@@ -249,11 +277,11 @@ export default function ContactPage() {
                                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                                                     </svg>
-                                                    Envoi en cours…
+                                                    Sending...
                                                 </>
                                             ) : (
                                                 <>
-                                                    Envoyer le message
+                                                    Send Message
                                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12zm0 0h7.5" />
                                                     </svg>

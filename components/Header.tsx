@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -8,31 +8,47 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [articlesOpen, setArticlesOpen] = useState(false);
   const [mobileArticlesOpen, setMobileArticlesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const articlesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navigation = [
-    { name: 'Accueil', href: '/' },
-    { name: 'À propos', href: '/about' },
-    { name: 'Intervenants', href: '/speakers' },
-    { name: 'Programme', href: '/program' },
-    { name: 'Soumission', href: '/submission' },
-    { name: 'Formations', href: '/training' },
-    { name: 'Ateliers', href: '/workshops' },
-    { name: 'Inscription', href: '/registration' },
-    { name: 'Lieu', href: '/venue' },
-    { name: 'Comités', href: '/committee' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Program', href: '/program' },
+    { name: 'Submission', href: '/submission' },
+    { name: 'Workshops', href: '/workshops' },
+    { name: 'Registration', href: '/registration' },
+    { name: 'Venue', href: '/venue' },
+    { name: 'Committees', href: '/committee' },
     { name: 'Sponsors', href: '/sponsors' },
     { name: 'Contact', href: '/contact' },
   ];
 
   const articles = [
-    { name: 'Édition 2024', href: 'https://piahs.copernicus.org/articles/388/index.html' },
-    { name: 'Édition 2025', href: 'https://piahs.copernicus.org/articles/389/index.html' },
+    { name: '2024 Edition', href: 'https://piahs.copernicus.org/articles/388/index.html' },
+    { name: '2025 Edition', href: 'https://piahs.copernicus.org/articles/389/index.html' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        fontFamily: 'DM Sans, sans-serif',
+        backgroundColor: scrolled ? 'rgba(255,255,255,0.96)' : '#ffffff',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        boxShadow: scrolled ? '0 2px 24px rgba(0,51,102,0.09)' : '0 1px 0 rgba(0,0,0,0.06)',
+      }}
+    >
+      {/* Bottom gradient shimmer line */}
+      <div className="header-gradient-line" />
+
       {/* Main Navigation Bar */}
       <div className="flex items-center justify-between max-w-[1400px] mx-auto px-4 h-[50px]">
         {/* Brand / Logo */}
@@ -40,7 +56,7 @@ export default function Header() {
           <img src="/logo.png" alt="SEA 2026" className="h-8 w-auto" />
           <span
             className="font-bold tracking-tight"
-            style={{ color: '#002D72', fontSize: '18px' }}
+            style={{ color: '#002D72', fontSize: '18px', fontFamily: 'DM Sans, sans-serif' }}
           >
             SEA 2026
           </span>
@@ -54,21 +70,36 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="no-underline transition-colors"
+                className="relative no-underline transition-colors group"
                 style={{
-                  color: isActive ? '#16A34A' : '#334155',
-                  fontSize: '14.4px',
-                  fontWeight: 500,
-                  padding: '8px 12px',
-                  fontFamily: 'Inter, sans-serif',
+                  color: isActive ? '#058332' : '#334155',
+                  fontSize: '14px',
+                  fontWeight: isActive ? 700 : 500,
+                  padding: '14px 11px',
+                  fontFamily: 'DM Sans, sans-serif',
                 }}
               >
                 {item.name}
+                {/* Active underline */}
+                <span
+                  className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full transition-opacity duration-200"
+                  style={{
+                    background: 'linear-gradient(90deg, #003366, #058332)',
+                    opacity: isActive ? 1 : 0,
+                  }}
+                />
+                {/* Hover underline */}
+                {!isActive && (
+                  <span
+                    className="absolute bottom-0 left-2 right-2 h-[2px] rounded-full opacity-0 group-hover:opacity-40 transition-opacity duration-200"
+                    style={{ background: 'linear-gradient(90deg, #003366, #058332)' }}
+                  />
+                )}
               </Link>
             );
           })}
 
-          {/* Nos articles dropdown */}
+          {/* Our Proceedings dropdown */}
           <div
             ref={articlesRef}
             className="relative"
@@ -79,13 +110,13 @@ export default function Header() {
               className="flex items-center gap-1 no-underline transition-colors bg-transparent border-0 cursor-pointer"
               style={{
                 color: '#334155',
-                fontSize: '14.4px',
+                fontSize: '14px',
                 fontWeight: 500,
-                padding: '8px 12px',
-                fontFamily: 'Inter, sans-serif',
+                padding: '14px 11px',
+                fontFamily: 'DM Sans, sans-serif',
               }}
             >
-              Nos articles
+              Our Proceedings
               <svg
                 className="w-3.5 h-3.5 transition-transform"
                 style={{ transform: articlesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -97,21 +128,27 @@ export default function Header() {
 
             {articlesOpen && (
               <div
-                className="absolute top-full left-0 bg-white shadow-lg rounded border border-gray-100 py-1 z-50"
-                style={{ minWidth: '160px' }}
+                className="absolute top-full left-0 bg-white rounded-lg py-2 z-50 overflow-hidden"
+                style={{
+                  minWidth: '170px',
+                  boxShadow: '0 8px 32px rgba(0,51,102,0.12)',
+                  border: '1px solid #e8eef3',
+                }}
               >
+                {/* Top accent line */}
+                <div className="h-[2px] w-full" style={{ background: 'linear-gradient(90deg, #003366, #058332)' }} />
                 {articles.map((article) => (
                   <a
                     key={article.name}
                     href={article.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block no-underline px-4 py-2 transition-colors hover:bg-gray-50"
+                    className="block no-underline px-4 py-2.5 transition-colors hover:bg-[#f0fdf4]"
                     style={{
                       color: '#334155',
-                      fontSize: '14px',
+                      fontSize: '13.5px',
                       fontWeight: 500,
-                      fontFamily: 'Inter, sans-serif',
+                      fontFamily: 'DM Sans, sans-serif',
                     }}
                   >
                     {article.name}
@@ -121,6 +158,21 @@ export default function Header() {
             )}
           </div>
         </nav>
+
+        {/* CTA button — Register */}
+        <Link
+          href="/registration"
+          className="hidden xl:inline-flex items-center gap-2 no-underline font-bold text-white text-sm px-4 py-2 rounded-full transition-all hover:opacity-90 hover:-translate-y-0.5"
+          style={{
+            background: 'linear-gradient(135deg, #003366 0%, #058332 100%)',
+            fontSize: '13.5px',
+          }}
+        >
+          Register
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -149,11 +201,11 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="no-underline px-4 py-3 rounded transition-colors"
+                className="no-underline px-4 py-3 rounded-lg transition-colors"
                 style={{
-                  color: pathname === item.href ? '#16A34A' : '#334155',
+                  color: pathname === item.href ? '#058332' : '#334155',
                   fontSize: '15px',
-                  fontWeight: pathname === item.href ? 600 : 500,
+                  fontWeight: pathname === item.href ? 700 : 500,
                   backgroundColor: pathname === item.href ? '#f0fdf4' : 'transparent',
                 }}
               >
@@ -161,13 +213,13 @@ export default function Header() {
               </Link>
             ))}
 
-            {/* Nos articles — mobile accordion */}
+            {/* Proceedings — mobile accordion */}
             <button
               onClick={() => setMobileArticlesOpen(!mobileArticlesOpen)}
-              className="flex items-center justify-between w-full px-4 py-3 rounded transition-colors bg-transparent border-0 cursor-pointer text-left"
+              className="flex items-center justify-between w-full px-4 py-3 rounded-lg transition-colors bg-transparent border-0 cursor-pointer text-left"
               style={{ color: '#334155', fontSize: '15px', fontWeight: 500 }}
             >
-              Nos articles
+              Our Proceedings
               <svg
                 className="w-4 h-4 transition-transform"
                 style={{ transform: mobileArticlesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -185,7 +237,7 @@ export default function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="no-underline px-4 py-2 rounded transition-colors"
+                    className="no-underline px-4 py-2 rounded-lg transition-colors hover:bg-gray-50"
                     style={{ color: '#334155', fontSize: '14px', fontWeight: 500 }}
                   >
                     {article.name}
@@ -193,6 +245,16 @@ export default function Header() {
                 ))}
               </div>
             )}
+
+            {/* Mobile CTA */}
+            <Link
+              href="/registration"
+              onClick={() => setIsOpen(false)}
+              className="no-underline text-white font-bold text-center py-3 px-6 rounded-full mt-2 transition-all hover:opacity-90"
+              style={{ background: 'linear-gradient(135deg, #003366 0%, #058332 100%)', fontSize: '15px' }}
+            >
+              Register Now
+            </Link>
           </div>
         </div>
       )}

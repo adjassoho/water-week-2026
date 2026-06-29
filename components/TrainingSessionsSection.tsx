@@ -5,31 +5,31 @@ import Link from 'next/link';
 export default function TrainingSessionsSection() {
   const trainers = [
     {
-      name: 'Pr. Mounia Tahiri',
-      title: 'Professeur, Faculté des Sciences',
-      affiliation: 'Université Mohammed V, Rabat, Maroc',
-      session: 'SESSION 1 : Télédétection Intégrée & Techniques Statistiques Multivariées',
-      image: 'https://icar2026.org/wp-content/uploads/2025/10/Pr-Mounia.jpg',
+      name: 'Débat Croisé IA vs. Méthodes Classiques',
+      title: 'Session Spéciale 1',
+      affiliation: 'Hydrology, Agriculture & Environmental Science',
+      session: 'Comparaison des approches IA et méthodes classiques pour la prévision des crues, sécheresses et rendements agricoles',
+      image: null,
     },
     {
-      name: 'Pr. Tarik Bouramtane',
-      title: 'Professeur, Faculté des Sciences',
-      affiliation: 'Université Mohammed V, Rabat, Maroc',
-      session: 'SESSION 2 : Machine Learning pour la Cartographie des Impacts Hydrologiques',
-      image: 'https://icar2026.org/wp-content/uploads/2025/10/Pr-Tarik.png',
+      name: 'UNESCO-IHE / WDPP',
+      title: 'Session Spéciale 2',
+      affiliation: 'IHE Delft Institute for Water Education',
+      session: 'Water and Development Partnership Programme — Projets, financement et synergies Afrique-Europe',
+      image: null,
     },
     {
-      name: 'Pr. Christel Prudhomme',
-      title: 'Experte en hydrologie globale',
-      affiliation: 'Centre Européen de Prévision Météorologique, UK',
-      session: 'SESSION 3 : Prévision Hydrologique & Système GloFAS',
-      image: 'https://icar2026.org/wp-content/uploads/2025/10/Portrait1PrudhommeMay2022-1-scaled-e1760004187720.jpg',
+      name: 'Compétition d\'Innovation PriMI',
+      title: 'Événement phare',
+      affiliation: '10 innovations sélectionnées — Jury de haut niveau',
+      session: 'Pitch public (10 min + Q&R) le 22 octobre 2026. 3 prix décernés à la cérémonie de clôture.',
+      image: null,
     },
     {
-      name: 'Pr. Bertil Nlend',
-      title: 'Maître de Conférences, Université de Douala',
-      affiliation: 'Vice-Président AISH Afrique, Cameroun',
-      session: 'SESSION 4 : Traceurs Isotopiques en Hydrologie',
+      name: 'Stands d\'Innovation',
+      title: 'Exposition',
+      affiliation: 'Espace dédié aux innovations numériques',
+      session: '20+ stands présentant des solutions technologiques pour l\'eau, l\'assainissement et l\'agriculture',
       image: null,
     },
   ];
@@ -45,8 +45,9 @@ export default function TrainingSessionsSection() {
           }}
         >
           <h2 className="text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider">
-            Sessions de Formation
+            Sessions Spéciales & Innovation
           </h2>
+          <p className="text-white/80 text-sm mt-1">3ème Édition — 20-22 Octobre 2026, Cotonou</p>
         </div>
 
         {/* Trainers List Card */}
@@ -96,7 +97,7 @@ export default function TrainingSessionsSection() {
           {/* Learn More Button */}
           <div className="text-center mt-8">
             <Link
-              href="/formations"
+              href="/program"
               className="inline-block px-8 py-3 font-bold text-sm no-underline transition-all hover:opacity-90"
               style={{
                 backgroundColor: '#009966',
@@ -104,7 +105,7 @@ export default function TrainingSessionsSection() {
                 borderRadius: '8px',
               }}
             >
-              En savoir plus
+              Voir le programme complet
             </Link>
           </div>
         </div>

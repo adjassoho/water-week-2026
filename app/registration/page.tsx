@@ -5,22 +5,22 @@ import Link from 'next/link';
 import FooterSection from '@/components/FooterSection';
 
 const benefits = [
-  'Sessions illimitées',
-  'Pauses café',
-  '3 déjeuners',
-  'Dîner de gala',
-  'Adhésion IAHS',
+  'Unlimited sessions',
+  'Coffee breaks',
+  '3 lunches',
+  'Gala dinner',
+  'IAHS membership',
 ];
 
 const feeRows = [
-  { category: 'Étudiants (tous pays)', early: '50€', standard: '65€' },
-  { category: 'Chercheurs du Maroc', early: '120€', standard: '140€' },
-  { category: 'Chercheurs pays en développement*', early: '200€', standard: '250€' },
-  { category: 'Chercheurs pays non en développement', early: '350€', standard: '450€' },
+  { category: 'Students (all countries)', early: '50€', standard: '65€' },
+  { category: 'Moroccan Researchers', early: '120€', standard: '140€' },
+  { category: 'Researchers from Developing Countries*', early: '200€', standard: '250€' },
+  { category: 'Researchers from Developed Countries', early: '350€', standard: '450€' },
 ];
 
 const developingCountries =
-  'Afghanistan, Albanie, Algérie, Angola, Arménie, Azerbaïdjan, Bangladesh, Bélarus, Belize, Bénin, Bhoutan, Bolivie, Bosnie-Herzégovine, Botswana, Brésil, Burkina Faso, Burundi, Cabo Verde, Cambodge, Cameroun, République centrafricaine, Tchad, Colombie, Comores, Congo, Côte d\'Ivoire, République démocratique du Congo, Djibouti, Dominique, République dominicaine, Équateur, Égypte, El Salvador, Guinée équatoriale, Érythrée, Éthiopie, Fidji, Gabon, Gambie, Géorgie, Ghana, Guatemala, Guinée, Guinée-Bissau, Haïti, Honduras, Inde, Indonésie, Macédoine du Nord, Iran, Irak, Jamaïque, Jordanie, Kenya, Lesotho, Libéria, Libye, Madagascar, Malawi, Mali, Iles Marshall, Mauritanie, Micronésie, Moldavie, Mongolie, Maroc, Mozambique, Myanmar, Namibie, Népal, Nicaragua, Niger, Nigéria, Pakistan, Papouasie-Nou.-Guinée, Paraguay, Pérou, Philippines, Moldavie, Macédoine du Nord, Rwanda, Saint-Vincent-et-les-Grenadines, Samoa, Sao Tomé-et-Principe, Sénégal, Serbie, Sierra Leone, Iles Salomon, Somalie, Afrique du Sud, Soudan du Sud, Sri Lanka, Palestine, Soudan, Suriname, Syrie, Tadjikistan, Tanzanie, Thaïlande, Timor-Leste, Togo, Tonga, Tunisie, Turkménistan, Tuvalu, Ouganda, Vanuatu, Venezuela, Viet Nam, Yémen, Zambie, Zimbabwe';
+  'Afghanistan, Albania, Algeria, Angola, Armenia, Azerbaijan, Bangladesh, Belarus, Belize, Benin, Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Brazil, Burkina Faso, Burundi, Cabo Verde, Cambodia, Cameroon, Central African Republic, Chad, Colombia, Comoros, Congo, Côte d\'Ivoire, Democratic Republic of the Congo, Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Ethiopia, Fiji, Gabon, Gambia, Georgia, Ghana, Guatemala, Guinea, Guinea-Bissau, Haiti, Honduras, India, Indonesia, North Macedonia, Iran, Iraq, Jamaica, Jordan, Kenya, Lesotho, Liberia, Libya, Madagascar, Malawi, Mali, Marshall Islands, Mauritania, Micronesia, Moldova, Mongolia, Morocco, Mozambique, Myanmar, Namibia, Nepal, Nicaragua, Niger, Nigeria, Pakistan, Papua New Guinea, Paraguay, Peru, Philippines, Rwanda, Saint Vincent and the Grenadines, Samoa, Sao Tome and Principe, Senegal, Serbia, Sierra Leone, Solomon Islands, Somalia, South Africa, South Sudan, Sri Lanka, Palestine, Sudan, Suriname, Syria, Tajikistan, Tanzania, Thailand, Timor-Leste, Togo, Tonga, Tunisia, Turkmenistan, Tuvalu, Uganda, Vanuatu, Venezuela, Viet Nam, Yemen, Zambia, Zimbabwe';
 
 export default function RegistrationPage() {
   const [conferenceType, setConferenceType] = useState('0');
@@ -47,9 +47,9 @@ export default function RegistrationPage() {
           {/* Title */}
           <h1
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-8"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            Votre inscription ouvre les portes à une expérience de conférence complète
+            Your registration opens doors to a complete conference experience
           </h1>
 
           {/* Benefit badges */}
@@ -69,7 +69,7 @@ export default function RegistrationPage() {
 
           {/* Training note */}
           <p className="text-white/70 text-sm italic border border-white/20 rounded-lg px-6 py-3 inline-block bg-white/5">
-            Les sessions de formation sont optionnelles et soumises à des frais supplémentaires modiques.
+            Training sessions are optional and subject to modest additional fees.
           </p>
         </div>
       </div>
@@ -85,13 +85,13 @@ export default function RegistrationPage() {
                 className="px-6 py-4"
                 style={{ background: 'linear-gradient(to right, #02345e, #058332)' }}
               >
-                <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
-                  Frais de participation à la conférence
+                <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                  Conference Registration Fees
                 </h2>
               </div>
               <div className="p-6">
                 <p className="text-gray-500 text-sm mb-4 italic">
-                  La participation ne sera confirmée qu&apos;une fois les frais réglés.
+                  Participation will only be confirmed once registration fees are paid.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm min-w-[380px]">
@@ -117,7 +117,7 @@ export default function RegistrationPage() {
                 {/* Developing countries list */}
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <p className="text-xs text-gray-400 leading-relaxed">
-                    <strong className="text-gray-600">* Liste des pays en développement :</strong>{' '}
+                    <strong className="text-gray-600">* Developing countries list:</strong>{' '}
                     {developingCountries}
                   </p>
                 </div>
@@ -133,17 +133,17 @@ export default function RegistrationPage() {
                   className="px-6 py-4"
                   style={{ background: 'linear-gradient(to right, #02345e, #058332)' }}
                 >
-                  <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
-                    Frais de session de formation
+                  <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                    Training Session Fees
                   </h2>
                 </div>
                 <div className="p-6 space-y-2">
                   <p className="text-gray-700 text-sm">
-                    <strong>1 jour de formation :</strong>{' '}
+                    <strong>1 day of training:</strong>{' '}
                     <span className="text-[#02345e] font-bold">50€</span>
                   </p>
                   <p className="text-gray-700 text-sm">
-                    <strong>2 jours de formation :</strong>{' '}
+                    <strong>2 days of training:</strong>{' '}
                     <span className="text-[#02345e] font-bold">100€</span>
                   </p>
                 </div>
@@ -155,52 +155,52 @@ export default function RegistrationPage() {
                   className="px-6 py-4"
                   style={{ background: 'linear-gradient(to right, #02345e, #058332)' }}
                 >
-                  <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'var(--font-heading)' }}>
-                    Calculer vos frais d&apos;inscription
+                  <h2 className="font-bold text-white text-lg" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                    Calculate Your Registration Fees
                   </h2>
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Conférence :</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Conference:</label>
                     <select
                       value={conferenceType}
                       onChange={e => setConferenceType(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#058332]/30 bg-white"
                     >
-                      <option value="0">Pas de participation (0€)</option>
-                      <option value="50">Étudiant — Early Bird (50€)</option>
-                      <option value="65">Étudiant — Standard (65€)</option>
-                      <option value="120">Chercheur Maroc — Early Bird (120€)</option>
-                      <option value="140">Chercheur Maroc — Standard (140€)</option>
-                      <option value="200">Chercheur pays en dév. — Early Bird (200€)</option>
-                      <option value="250">Chercheur pays en dév. — Standard (250€)</option>
-                      <option value="350">Chercheur pays non en dév. — Early Bird (350€)</option>
-                      <option value="450">Chercheur pays non en dév. — Standard (450€)</option>
+                      <option value="0">No participation (0€)</option>
+                      <option value="50">Student — Early Bird (50€)</option>
+                      <option value="65">Student — Standard (65€)</option>
+                      <option value="120">Moroccan Researcher — Early Bird (120€)</option>
+                      <option value="140">Moroccan Researcher — Standard (140€)</option>
+                      <option value="200">Researcher from Dev. Country — Early Bird (200€)</option>
+                      <option value="250">Researcher from Dev. Country — Standard (250€)</option>
+                      <option value="350">Researcher from Developed Country — Early Bird (350€)</option>
+                      <option value="450">Researcher from Developed Country — Standard (450€)</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Formation :</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Training:</label>
                     <select
                       value={trainingDays}
                       onChange={e => setTrainingDays(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#058332]/30 bg-white"
                     >
-                      <option value="0">Pas de formation (0€)</option>
-                      <option value="50">1 jour (50€)</option>
-                      <option value="100">2 jours (100€)</option>
+                      <option value="0">No training (0€)</option>
+                      <option value="50">1 day (50€)</option>
+                      <option value="100">2 days (100€)</option>
                     </select>
                   </div>
 
                   {/* Total */}
                   <div className="rounded-xl bg-[#f4f7f9] border border-gray-200 px-6 py-5 text-center">
-                    <p className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Total estimé</p>
+                    <p className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Estimated Total</p>
                     <p
                       className="text-4xl font-extrabold text-[#02345e]"
-                      style={{ fontFamily: 'var(--font-heading)' }}
+                      style={{ fontFamily: 'DM Sans, sans-serif' }}
                     >
                       {total}<span className="text-[#058332]">€</span>
                     </p>
-                    <p className="text-gray-400 text-xs mt-1">tarif early-bird indiqué — le tarif standard peut être supérieur</p>
+                    <p className="text-gray-400 text-xs mt-1">early-bird rate shown — standard rate may be higher</p>
                   </div>
                 </div>
               </div>
@@ -215,14 +215,12 @@ export default function RegistrationPage() {
           <div className="border-l-4 border-[#058332] pl-8">
             <h2
               className="text-2xl font-bold text-[#02345e] mb-4"
-              style={{ fontFamily: 'var(--font-heading)' }}
+              style={{ fontFamily: 'DM Sans, sans-serif' }}
             >
-              Modalités de paiement
+              Payment Terms
             </h2>
             <p className="text-gray-600 text-sm mb-6">
-              Par virement bancaire au compte suivant, en précisant dans l&apos;objet du virement{' '}
-              <strong className="text-[#02345e]">SEA2026</strong> ainsi que vos{' '}
-              <strong className="text-[#02345e]">nom et prénom</strong>.
+              By bank transfer to the following account, specifying <strong className="text-[#02345e]">SEA2026</strong> as well as your <strong className="text-[#02345e]">full name</strong> (First &amp; Last Name) in the payment reference.
             </p>
 
             {/* Bank details */}
@@ -239,7 +237,7 @@ export default function RegistrationPage() {
 
             {/* Note */}
             <div className="rounded-lg border border-dashed border-gray-300 bg-white px-5 py-3 text-sm text-gray-500 italic">
-              Note : Le paiement des frais de conférence et de formation peut être effectué en un seul virement.
+              Note: Payment for both conference and training fees can be made in a single transfer.
             </div>
           </div>
         </div>
@@ -253,18 +251,18 @@ export default function RegistrationPage() {
         <div className="container mx-auto px-4">
           <h2
             className="text-3xl font-extrabold text-white mb-3"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            Prêt à s&apos;inscrire ?
+            Ready to Register?
           </h2>
           <p className="text-white/60 text-base mb-8">
-            Réservez votre place pour la Semaine de l&apos;Eau 2026 dès maintenant.
+            Secure your spot for Water Week 2026 today.
           </p>
           <Link
             href="/registration-form"
             className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-[#02345e] font-bold text-base hover:bg-white/90 transition-colors shadow-lg"
           >
-            S&apos;inscrire maintenant
+            Register Now
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

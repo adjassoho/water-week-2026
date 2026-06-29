@@ -7,12 +7,12 @@ export default function AboutPage() {
   const organizations = [
     {
       abbr: 'C2EA',
-      full: 'Centre d\'Excellence Africain pour l\'Eau et l\'Assainissement',
+      full: 'Africa Centre of Excellence for Water and Sanitation',
       logo: 'https://i.ibb.co/rGL6BZs2/logo-C2-EA.png',
     },
     {
       abbr: 'INE / UAC',
-      full: 'Institut National de l\'Eau — Université d\'Abomey-Calavi',
+      full: 'National Institute of Water — University of Abomey-Calavi',
       logo: 'https://i.ibb.co/8nLpXxbm/Logo-INE.png',
     },
     {
@@ -28,65 +28,74 @@ export default function AboutPage() {
     {
       abbr: 'UNESCO',
       full: 'Intergovernmental Hydrological Programme',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/UNESCO_logo.svg/200px-UNESCO_logo.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/UNESCO_logo.svg',
     },
     {
       abbr: 'IRD',
-      full: 'Institut de Recherche pour le Développement, France',
+      full: 'French National Research Institute for Sustainable Development',
       logo: null,
     },
     {
-      abbr: 'Min. de l\'Eau',
-      full: 'Ministère de l\'Eau et de l\'Assainissement, Bénin',
+      abbr: 'Ministry of Water',
+      full: 'Ministry of Water and Sanitation, Benin',
       logo: null,
     },
     {
       abbr: 'UAC',
-      full: 'Université d\'Abomey-Calavi, Bénin',
+      full: 'University of Abomey-Calavi, Benin',
       logo: null,
     },
   ];
 
   const conferenceDetails = [
     {
-      title: 'Contexte et défis de l\'eau en Afrique',
-      content: 'En Afrique, les ressources en eau sont soumises à une pression croissante en raison du changement climatique, de la croissance démographique rapide et du développement économique accéléré. Une compréhension détaillée des climats, des régimes hydrologiques et de leur variabilité spatiale et temporelle est un prérequis essentiel pour toute stratégie de gestion durable et de planification prospective des ressources en eau.',
+      title: 'Context and Rationale',
+      content: 'The 3rd edition of the Water and Sanitation Week takes place in a context of growing challenges related to climate change, demographic pressure, and food and water security. In response, digital innovation and inclusion (digitalization, artificial intelligence, participatory science) emerge as key levers to transform governance, operational efficiency, and decision-making in Africa.',
       bullets: null,
     },
     {
-      title: 'Histoire et développement d\'une communauté scientifique panafricaine',
-      content: 'Les éditions précédentes des conférences internationales tenues à Hammamet (2015), Dakar (2016), Alger (2018) et Cotonou (2021) ont contribué à la structuration d\'un réseau de recherche hydrologique africain axé sur les rivières et cours d\'eau du continent. Ce réseau, soutenu par le programme FRIEND-Water de l\'UNESCO et l\'Association Internationale des Sciences Hydrologiques (IAHS), a permis le partage de méthodes, d\'outils et de données, et a favorisé une meilleure compréhension des régimes hydrologiques tropicaux et semi-arides.',
+      title: 'Theme of the 3rd Edition',
+      content: '“Harnessing Innovation and Digital Inclusion in Education and Research for Sustainable Transformation of Water, Sanitation, and Agriculture” — This unifying theme guides all sessions, panels, and competitions.',
       bullets: null,
     },
     {
-      title: 'Positionnement de la 2ème édition dans un paysage scientifique renouvelé',
-      content: 'Cette deuxième édition se déroule dans un environnement scientifique international en évolution, notamment marqué par la création du Comité Afrique de l\'IAHS, qui soutient activement l\'événement. Cette structuration institutionnelle renforce la visibilité de la recherche hydrologique africaine au sein de la communauté scientifique mondiale et fournit un cadre stratégique pour la promotion de la production scientifique régionale.',
-      bullets: null,
-    },
-    {
-      title: 'Axes thématiques et focus scientifique',
+      title: 'Specific Objectives',
       content: null,
       bullets: [
-        { bold: 'Hydrologie des bassins :', text: 'de l\'étude des grands bassins fluviaux transfrontaliers aux petits bassins versants, incluant des approches multi-échelles adaptées à la modélisation physique.' },
-        { bold: 'Processus hydrologiques à fine échelle :', text: 'analyse des dynamiques locales, essentielles pour le développement de modèles à haute résolution.' },
+        { bold: 'Multi-stakeholder exchanges:', text: 'Facilitate discussions between researchers, professionals, and decision-makers on the challenges of digital transformation in water, sanitation, and agriculture.' },
+        { bold: 'Role of technology:', text: 'Reassess the role of digital technologies in education and research for the sustainable transformation of target sectors.' },
+        { bold: 'Public-Private Partnerships (PPP):', text: 'Promote dialogue on Public-Private Partnerships to fund digital inclusion in education.' },
+        { bold: 'PriMI Innovations:', text: 'Identify and reward the best digital innovations through the Best Innovation Award (PriMI).' },
+        { bold: 'Regional capacity building:', text: 'Strengthen regional capacities through high-level expert sessions, notably via the Water and Development Partnership Programme (WDPP) of UNESCO-IHE.' },
       ],
     },
     {
-      title: 'Thèmes prioritaires émergents',
+      title: 'Conference Thematic Streams',
       content: null,
       bullets: [
-        { bold: 'Qualité de l\'eau et santé :', text: 'évaluation des risques microbiologiques et méthodes de traitement innovantes.' },
-        { bold: 'Écohydrologie :', text: 'intégration des processus écologiques dans la gestion intégrée des ressources en eau.' },
-        { bold: 'Eaux souterraines :', text: 'quantification des ressources, problèmes de qualité liés à l\'agriculture, et rôle dans l\'approvisionnement en eau des populations.' },
-        { bold: 'Flux sédimentaires et érosion :', text: 'des origines aux impacts sur les réservoirs, le cycle du carbone et la vulnérabilité des zones côtières.' },
+        { bold: 'Stream 1:', text: 'Digital Transformation and Management of Water, Sanitation, and Agriculture.' },
+        { bold: 'Stream 2:', text: 'Open Data, AI, and Participatory Sciences in Service of Research and Innovation.' },
+        { bold: 'Stream 3:', text: 'Artificial Intelligence and Optimization of Educational Systems.' },
+        { bold: 'Stream 4:', text: 'Innovative Processes and Smart Technologies in Water and Sludge Treatment.' },
       ],
     },
     {
-      title: 'Innovations technologiques et surveillance',
+      title: 'Special Sessions',
       content: null,
       bullets: [
-        { bold: 'Télédétection et intelligence artificielle :', text: 'pour l\'observation, la modélisation et la prévision hydrologiques.' },
-        { bold: 'Capteurs low-cost et science citoyenne :', text: 'développement de réseaux de surveillance décentralisés et implication des communautés locales.' },
+        { bold: 'Cross-Debate:', text: '“AI vs. Classical Approaches for Forecasting Natural Phenomena: Complementarity or Opposition?” (floods, droughts, agricultural yields).' },
+        { bold: 'UNESCO-IHE/WDPP Session:', text: 'Water diplomacy, transboundary governance, and capacity building in West Africa (Block 1: Panel, Block 2: Communications & Alumni).' },
+        { bold: 'PriMI Competition:', text: 'Best Innovation Award honoring the best technological solutions adapted to the African context with public pitches.' },
+      ],
+    },
+    {
+      title: 'Expected Outcomes',
+      content: null,
+      bullets: [
+        { bold: 'Participation & Audience:', text: '300+ participants from the sub-region, 15+ high-level panelists, 15+ international keynotes, and representatives from 15+ countries.' },
+        { bold: 'Scientific Output:', text: '30+ scientific communications presented, peer-reviewed proceedings published, and a compilation of innovations and recommendations.' },
+        { bold: 'Innovation & Stands:', text: '20+ technology exhibition stands, and 3 PriMI laureates awarded and supported.' },
+        { bold: 'Partnerships & Cooperation:', text: 'Sharing results of WDPP projects and strengthening the alumni network (WaSahelNet) in Africa.' },
       ],
     },
   ];
@@ -112,10 +121,10 @@ export default function AboutPage() {
             fontSize: 'clamp(28px, 5vw, 52px)',
             color: '#111111',
             letterSpacing: '0.04em',
-            fontFamily: 'Georgia, serif',
+            fontFamily: 'DM Sans, sans-serif',
           }}
         >
-          L&apos;IDENTITÉ DE LA CONFÉRENCE
+          Conference <span className="font-accent italic font-medium">Identity</span>
         </h1>
       </div>
 
@@ -130,7 +139,7 @@ export default function AboutPage() {
             className="font-bold tracking-widest uppercase"
             style={{ color: '#FFFFFF', fontSize: '22px', letterSpacing: '0.25em' }}
           >
-            Organisations
+            Organizations
           </h2>
         </div>
 
@@ -191,7 +200,7 @@ export default function AboutPage() {
       >
         <div className="max-w-5xl mx-auto">
           {/* Pill button */}
-          <div className="mb-10">
+          <div className="mb-10 text-center">
             <span
               className="inline-block px-6 py-2 font-bold uppercase tracking-wider text-white text-sm"
               style={{
@@ -199,7 +208,7 @@ export default function AboutPage() {
                 borderRadius: '999px',
               }}
             >
-              Détails de la Conférence
+              Conference Details
             </span>
           </div>
 

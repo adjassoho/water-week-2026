@@ -2,11 +2,11 @@ import FooterSection from '@/components/FooterSection';
 
 const organizers = [
     {
-        name: "Centre d'Excellence d'Afrique pour l'Eau (C2EA)",
+        name: "Africa Centre of Excellence for Water (C2EA)",
         img: 'https://i.ibb.co/rGL6BZs2/logo-C2-EA.png',
     },
     {
-        name: "Institut National de l'Eau (INE/UAC)",
+        name: "National Institute of Water (INE/UAC)",
         img: 'https://i.ibb.co/8nLpXxbm/Logo-INE.png',
     },
 ];
@@ -14,23 +14,23 @@ const organizers = [
 const institutionalPartners = [
     {
         name: 'IAHS',
-        full: 'Association Internationale des Sciences Hydrologiques',
+        full: 'International Association of Hydrological Sciences',
         img: 'https://i.ibb.co/XZW7BHKz/jhhv.png',
     },
     {
         name: 'FRIEND AOC',
-        full: "Flow Regimes from International Experimental and Network Data — Afrique de l'Ouest & Centrale",
+        full: "Flow Regimes from International Experimental and Network Data — West & Central Africa",
         img: 'https://i.ibb.co/LXbQgQn9/jhfjhf.jpg',
     },
 ];
 
 const comingSoonPartners = [
-    { name: 'IRD', full: 'Institut de Recherche pour le Développement' },
+    { name: 'IRD', full: 'French National Research Institute for Sustainable Development' },
     {
-        name: 'UNESCO', full: "Organisation des Nations Unies pour l\u2019\u00c9ducation, la Science et la Culture"
+        name: 'UNESCO', full: "United Nations Educational, Scientific and Cultural Organization"
     },
-    { name: 'AFD', full: 'Agence Française de Développement' },
-    { name: 'Banque Mondiale', full: 'The World Bank Group' },
+    { name: 'AFD', full: 'French Development Agency' },
+    { name: 'World Bank', full: 'The World Bank Group' },
 ];
 
 export default function SponsorsPage() {
@@ -45,14 +45,14 @@ export default function SponsorsPage() {
                 <div className="container mx-auto px-4 text-center">
                     <h1
                         className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider"
-                        style={{ fontFamily: 'var(--font-heading)' }}
+                        style={{ fontFamily: 'DM Sans, sans-serif' }}
                     >
-                        SPONSORS &amp; PARTENAIRES
+                        Sponsors &amp; <span className="font-accent italic font-medium">Partners</span>
                     </h1>
                 </div>
             </div>
 
-            {/* ===== Organisateurs principaux ===== */}
+            {/* ===== Main Organizers ===== */}
             <div className="bg-[#f4f7f9] py-14">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <div className="flex items-center gap-3 mb-8">
@@ -61,10 +61,10 @@ export default function SponsorsPage() {
                             style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
                         />
                         <div>
-                            <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                                Organisateurs principaux
+                            <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                                Main Organizers
                             </h2>
-                            <p className="text-gray-400 text-sm">Institutions co-organisatrices de la conférence</p>
+                            <p className="text-gray-400 text-sm">Co-organizing institutions of the conference</p>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@ export default function SponsorsPage() {
                                         className="max-h-28 max-w-full object-contain"
                                     />
                                 </div>
-                                <p className="text-[#02345e] font-semibold text-center text-sm" style={{ fontFamily: 'var(--font-heading)' }}>
+                                <p className="text-[#02345e] font-semibold text-center text-sm" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                                     {org.name}
                                 </p>
                             </div>
@@ -91,7 +91,7 @@ export default function SponsorsPage() {
                 </div>
             </div>
 
-            {/* ===== Partenaires institutionnels ===== */}
+            {/* ===== Institutional Partners ===== */}
             <div className="bg-white py-14">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <div className="flex items-center gap-3 mb-8">
@@ -100,10 +100,10 @@ export default function SponsorsPage() {
                             style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
                         />
                         <div>
-                            <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                                Partenaires institutionnels
+                            <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                                Institutional Partners
                             </h2>
-                            <p className="text-gray-400 text-sm">Organisations partenaires scientifiques et techniques</p>
+                            <p className="text-gray-400 text-sm">Scientific and technical partner organizations</p>
                         </div>
                     </div>
 

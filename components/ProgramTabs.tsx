@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-type EventType = 'admin' | 'ceremony' | 'social' | 'keynote' | 'session' | 'poster' | 'panel' | 'break';
+type EventType = 'admin' | 'ceremony' | 'social' | 'keynote' | 'session' | 'poster' | 'panel' | 'break' | 'competition';
 
 interface Event {
     time: string;
@@ -21,59 +21,48 @@ interface DaySchedule {
 
 const scheduleData: DaySchedule[] = [
     {
-        day: 'Lundi',
-        date: '6 Juillet',
-        label: 'Ouverture',
+        day: 'Tuesday',
+        date: 'Oct. 20',
+        label: 'Opening & Plenary Sessions',
         events: [
-            { time: '08:30 - 09:30', title: 'Inscription & Café de bienvenue', type: 'admin', location: 'Hall Principal' },
-            { time: '09:30 - 11:00', title: 'Cérémonie d\'Ouverture Officielle', type: 'ceremony', description: 'Discours des officiels, partenaires et organisateurs.', location: 'Amphithéâtre Bel Mahi' },
-            { time: '11:00 - 11:30', title: 'Pause Café & Photo de Groupe', type: 'social', location: 'Esplanade' },
-            { time: '11:30 - 12:30', title: 'Keynote 1: Hydrologie et Changement Climatique', type: 'keynote', description: 'Intervenant: Pr. Lahcen Benaabidate', location: 'Amphithéâtre Bel Mahi' },
-            { time: '12:30 - 14:00', title: 'Déjeuner', type: 'social', location: 'Restaurant' },
-            { time: '14:00 - 15:30', title: 'Session Parallèle 1A: Ressources en Eau', type: 'session', location: 'Salle A' },
-            { time: '14:00 - 15:30', title: 'Session Parallèle 1B: Qualité de l\'Eau', type: 'session', location: 'Salle B' },
-            { time: '15:30 - 16:00', title: 'Pause Café', type: 'social' },
-            { time: '16:00 - 17:30', title: 'Session Posters 1', type: 'poster', location: 'Hall d\'Exposition' },
+            { time: '08:00 - 09:30', title: 'Registration & Welcome', type: 'admin', location: 'Main Hall — Palais des Congrès' },
+            { time: '09:30 - 10:30', title: 'Inaugural Keynote: "Digital Innovation and AI: New Levers for Sustainable Management of Water and Agriculture"', type: 'keynote', location: 'Main Hall' },
+            { time: '10:30 - 11:30', title: 'Official Opening Ceremony', type: 'ceremony', description: 'Speeches from dignitaries, cultural performances, and awareness sketches.', location: 'Main Hall' },
+            { time: '11:30 - 12:00', title: 'Coffee Break — Departure of official guests', type: 'social', location: 'Foyer' },
+            { time: '12:00 - 14:15', title: 'Keynote Presentations', type: 'keynote', description: 'K1: Digital technology and innovation in education · K2: AI and data valorization for water and environment · K3: Digital innovation and precision agriculture in Africa (3 × 30 min + 15 min Q&A).', location: 'Main Hall' },
+            { time: '14:15 - 15:30', title: 'Lunch', type: 'social', location: 'Exhibition Area' },
+            { time: '15:30 - 17:30', title: 'Parallel Scientific Session Presentations', type: 'session', description: 'Thematic Streams 1 & 2: Digital Transformation / Open Data & AI.', location: 'Rooms A, B & C' },
+            { time: '17:30 - 18:30', title: 'Innovation Stands Exhibition & Networking Cocktail', type: 'social', location: 'Exhibition Area' },
         ]
     },
     {
-        day: 'Mardi',
-        date: '7 Juillet',
-        label: 'Conférences',
+        day: 'Wednesday',
+        date: 'Oct. 21',
+        label: 'Panels & UNESCO-IHE/WDPP',
         events: [
-            { time: '09:00 - 10:30', title: 'Session Parallèle 2A: Hydrologie Urbaine', type: 'session', location: 'Salle A' },
-            { time: '09:00 - 10:30', title: 'Session Parallèle 2B: Eaux Souterraines', type: 'session', location: 'Salle B' },
-            { time: '10:30 - 11:00', title: 'Pause Café', type: 'social' },
-            { time: '11:00 - 12:30', title: 'Keynote 2: Gestion Intégrée des Ressources', type: 'keynote', description: 'Intervenant: Dr. Oula Amrouni', location: 'Amphithéâtre Bel Mahi' },
-            { time: '12:30 - 14:00', title: 'Déjeuner', type: 'social' },
-            { time: '14:00 - 15:30', title: 'Session Spéciale: Table Ronde Experts', type: 'panel', location: 'Amphithéâtre Bel Mahi' },
-            { time: '15:30 - 16:00', title: 'Pause Café', type: 'social' },
-            { time: '16:00 - 17:30', title: 'Ateliers Techniques', type: 'session', location: 'Salles C & D' },
+            { time: '08:00 - 09:00', title: 'Registration & Setup', type: 'admin', location: 'Main Hall' },
+            { time: '09:00 - 10:30', title: 'SPECIAL SESSION 1 — Cross-Debate: "AI vs. Classical Approaches for Forecasting Natural Phenomena"', type: 'panel', description: 'Comparing traditional physical/statistical models and AI for predicting floods, droughts, and agricultural yields (4 speakers, 1 moderator).', location: 'Main Hall' },
+            { time: '10:30 - 11:00', title: 'Coffee Break', type: 'social' },
+            { time: '11:00 - 12:30', title: 'HIGH-LEVEL PANEL — Education and Artificial Intelligence', type: 'panel', description: 'Responsibility, ethics, and sustainable use of AI in African educational systems (4 panelists, 1 moderator).', location: 'Main Hall' },
+            { time: '12:30 - 14:00', title: 'Lunch', type: 'social' },
+            { time: '14:00 - 15:30', title: 'SPECIAL SESSION 2 — UNESCO-IHE/WDPP [Part 1: Panel]', type: 'panel', description: 'Water diplomacy, transboundary governance, and capacity building in West Africa (3 experts from IHE Delft, 1 moderator).', location: 'Main Hall' },
+            { time: '15:30 - 16:00', title: 'Coffee Break', type: 'social' },
+            { time: '16:00 - 17:30', title: 'SPECIAL SESSION 2 — UNESCO-IHE/WDPP [Part 2: Presentations]', type: 'session', description: 'Presentations of projects funded or supported by the WDPP in Africa and alumni experience sharing (WaSahelNet booklet).', location: 'Room B' },
+            { time: '17:30 - 18:30', title: 'Innovation Stands Exhibition & Networking', type: 'social', location: 'Exhibition Area' },
         ]
     },
     {
-        day: 'Mercredi',
-        date: '8 Juillet',
-        label: 'Scientifique',
+        day: 'Thursday',
+        date: 'Oct. 22',
+        label: 'Innovation, Science & Closing',
         events: [
-            { time: '09:00 - 10:30', title: 'Session Parallèle 3A: Modélisation Hydrodynamique', type: 'session', location: 'Salle A' },
-            { time: '09:00 - 10:30', title: 'Session Parallèle 3B: Écohydrologie', type: 'session', location: 'Salle B' },
-            { time: '10:30 - 11:00', title: 'Pause Café', type: 'social' },
-            { time: '11:00 - 12:30', title: 'Keynote 3: Innovations en Hydrologie', type: 'keynote', description: 'Intervenant: Pr. Yves Tramblay', location: 'Amphithéâtre Bel Mahi' },
-            { time: '12:30 - 14:00', title: 'Déjeuner', type: 'social' },
-            { time: '14:00 - 17:00', title: 'Sortie Technique / Visite de Terrain', type: 'social', description: 'Visite des installations hydrauliques locales.' },
-            { time: '19:30', title: 'Dîner de Gala', type: 'social', location: 'Hôtel Azalaï' },
-        ]
-    },
-    {
-        day: 'Jeudi',
-        date: '9 Juillet',
-        label: 'Clôture',
-        events: [
-            { time: '09:00 - 10:30', title: 'Restitution des Ateliers', type: 'session', location: 'Amphithéâtre Bel Mahi' },
-            { time: '10:30 - 11:00', title: 'Pause Café', type: 'social' },
-            { time: '11:00 - 12:30', title: 'Cérémonie de Clôture & Remise des Prix', type: 'ceremony', location: 'Amphithéâtre Bel Mahi' },
-            { time: '12:30 - 14:00', title: 'Déjeuner de Départ', type: 'social' },
+            { time: '08:30 - 09:00', title: 'Registration & Setup', type: 'admin', location: 'Main Hall' },
+            { time: '09:00 - 10:30', title: 'PriMI COMPETITION — Innovation Pitches', type: 'competition', description: 'Public pitches by the 10 selected innovations (10 min pitch + 5 min Q&A each).', location: 'Main Hall' },
+            { time: '10:30 - 11:00', title: 'Coffee Break & Stands Visit', type: 'social', location: 'Exhibition Area' },
+            { time: '11:00 - 13:00', title: 'Parallel Scientific Session Presentations', type: 'session', description: 'Thematic Streams 3 & 4: Educational Systems / Smart Water & Sludge Treatment Technologies.', location: 'Rooms A, B & C' },
+            { time: '13:00 - 14:00', title: 'Lunch', type: 'social' },
+            { time: '14:00 - 14:30', title: 'PriMI Jury Deliberation (closed session)', type: 'admin', location: 'Jury Room' },
+            { time: '14:30 - 15:30', title: 'Closing Ceremony & PriMI Awards Presentation', type: 'ceremony', description: 'Cultural performance, reading of recommendations, closing speech, and award ceremony for the 3 winners.', location: 'Main Hall' },
         ]
     }
 ];
@@ -82,7 +71,7 @@ export default function ProgramTabs() {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
-        <div className="w-full max-w-5xl mx-auto px-4">
+        <div className="w-full max-w-5xl mx-auto px-4 font-sans">
             {/* Tabs Navigation */}
             <div className="flex flex-wrap justify-center gap-3 mb-10">
                 {scheduleData.map((day, index) => {
@@ -157,22 +146,27 @@ export default function ProgramTabs() {
                                             <span className={`
                         inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase
                         ${event.type === 'keynote' ? 'bg-[#1d5a8c]/10 text-[#1d5a8c]' :
-                                                    event.type === 'break' ? 'bg-orange-100 text-orange-700' :
+                                                    event.type === 'competition' ? 'bg-yellow-100 text-yellow-700' :
                                                         event.type === 'ceremony' ? 'bg-purple-100 text-purple-700' :
-                                                            'bg-gray-200 text-gray-700'}
-                      `}>
+                                                            event.type === 'panel' ? 'bg-green-100 text-green-700' :
+                                                                'bg-gray-200 text-gray-700'}
+                       `}>
                                                 {event.type === 'keynote' && '🎤'}
                                                 {event.type === 'social' && '☕'}
                                                 {event.type === 'ceremony' && '🏆'}
                                                 {event.type === 'session' && '📊'}
                                                 {event.type === 'poster' && '📌'}
                                                 {event.type === 'admin' && '📋'}
+                                                {event.type === 'panel' && '🗣️'}
+                                                {event.type === 'competition' && '🏅'}
                                                 <span className="ml-1">
                                                     {event.type === 'keynote' ? 'Keynote' :
-                                                        event.type === 'social' ? 'Pause / Social' :
-                                                            event.type === 'ceremony' ? 'Cérémonie' :
-                                                                event.type === 'session' ? 'Session' :
-                                                                    event.type}
+                                                        event.type === 'social' ? 'Break / Social' :
+                                                            event.type === 'ceremony' ? 'Ceremony' :
+                                                                event.type === 'session' ? 'Scientific Session' :
+                                                                    event.type === 'panel' ? 'Panel' :
+                                                                        event.type === 'competition' ? 'PriMI Competition' :
+                                                                            event.type}
                                                 </span>
                                             </span>
                                         </div>

@@ -15,74 +15,74 @@ function initialsOf(name: string) {
 
 const organizingCommittee = {
   chairs: [
-    { role: 'Président', name: 'Pr. Jean-Baptiste TANO', affiliation: "Professeur Universitaire, Chercheur Senior, Institut National de l'Eau, Université d'Abomey-Calavi" },
-    { role: 'Co-Président', name: 'Pr. Ernest AMOUSSOU', affiliation: 'Directeur de Recherche, Université de Parakou, Bénin' },
+    { role: 'Chair', name: 'Pr. Jean-Baptiste TANO', affiliation: "University Professor, Senior Researcher, National Institute of Water, University of Abomey-Calavi" },
+    { role: 'Co-Chair', name: 'Pr. Ernest AMOUSSOU', affiliation: 'Director of Research, University of Parakou, Benin' },
   ],
   members: [
-    { name: 'Pr. Moussa BOUKARI', affiliation: "Professeur chercheur, Université d'Abomey-Calavi" },
-    { name: 'Pr. Abel AFOUDA', affiliation: "Professeur chercheur, Institut National de l'Eau, UAC" },
-    { name: 'Dr. Expédit VISSIN', affiliation: "Maître de Conférences, Université d'Abomey-Calavi" },
-    { name: 'Dr. Daouda MAMA', affiliation: "Maître de Conférences, Institut National de l'Eau, UAC" },
-    { name: 'Dr. Josué ZANDAGBA', affiliation: "Enseignant-Chercheur, Institut National de l'Eau, UAC" },
-    { name: 'Dr. Nicaise YALO', affiliation: "Chercheur, Université d'Abomey-Calavi" },
-    { name: 'Dr. Hector ODOULAMI', affiliation: "Chercheur, Institut National de l'Eau, UAC" },
-    { name: 'Pr. Gil MAHÉ', affiliation: 'Directeur de Recherche, IRD, France' },
-    { name: 'Pr. Yves TRAMBLAY', affiliation: 'Chercheur Senior, IRD, France' },
-    { name: 'Dr. Andrew OGILVIE', affiliation: "Chercheur, Institut de Recherche pour le Développement" },
-    { name: 'Pr. Eric SERVAT', affiliation: "Directeur, Centre International UNESCO pour l'Eau, Montpellier" },
-    { name: 'Dr. Clémence DECROOCQ', affiliation: 'Chargée de Projet, Centre International UNESCO, Montpellier' },
+    { name: 'Pr. Moussa BOUKARI', affiliation: "Professor & Researcher, University of Abomey-Calavi" },
+    { name: 'Pr. Abel AFOUDA', affiliation: "Professor & Researcher, National Institute of Water, UAC" },
+    { name: 'Dr. Expédit VISSIN', affiliation: "Associate Professor, University of Abomey-Calavi" },
+    { name: 'Dr. Daouda MAMA', affiliation: "Associate Professor, National Institute of Water, UAC" },
+    { name: 'Dr. Josué ZANDAGBA', affiliation: "Lecturer-Researcher, National Institute of Water, UAC" },
+    { name: 'Dr. Nicaise YALO', affiliation: "Researcher, University of Abomey-Calavi" },
+    { name: 'Dr. Hector ODOULAMI', affiliation: "Researcher, National Institute of Water, UAC" },
+    { name: 'Pr. Gil MAHÉ', affiliation: 'Director of Research, IRD, France' },
+    { name: 'Pr. Yves TRAMBLAY', affiliation: 'Senior Researcher, IRD, France' },
+    { name: 'Dr. Andrew OGILVIE', affiliation: "Researcher, French National Research Institute for Sustainable Development (IRD)" },
+    { name: 'Pr. Eric SERVAT', affiliation: "Director, UNESCO International Centre for Water, Montpellier" },
+    { name: 'Dr. Clémence DECROOCQ', affiliation: 'Project Officer, UNESCO International Centre, Montpellier' },
   ],
 };
 
 const scientificCommittee = {
   chairs: [
-    { role: 'Président', name: 'Pr. Abel AFOUDA', affiliation: "Professeur Titulaire, Institut National de l'Eau, Université d'Abomey-Calavi" },
-    { role: 'Co-Président', name: 'Pr. Gil MAHÉ', affiliation: "Directeur de Recherche Senior, Institut de Recherche pour le Développement (IRD), Montpellier" },
+    { role: 'Chair', name: 'Pr. Abel AFOUDA', affiliation: "Full Professor, National Institute of Water, University of Abomey-Calavi" },
+    { role: 'Co-Chair', name: 'Pr. Gil MAHÉ', affiliation: "Senior Director of Research, French National Research Institute for Sustainable Development (IRD), Montpellier" },
   ],
   members: [
-    { name: 'Pr. Ernest AMOUSSOU', affiliation: 'Université de Parakou, Bénin' },
-    { name: 'Pr. Moussa BOUKARI', affiliation: "Université d'Abomey-Calavi, Bénin" },
-    { name: 'Pr. Expédit VISSIN', affiliation: "Université d'Abomey-Calavi, Bénin" },
-    { name: 'Pr. Lahcen BENAABIDATE', affiliation: 'Université Sidi Mohammed Ben Abdellah, Fès, Maroc' },
-    { name: 'Pr. Ilias KACIMI', affiliation: 'Université Mohammed V, Rabat, Maroc' },
-    { name: 'Pr. Tarik BOURAMTANE', affiliation: 'Université Mohammed V, Rabat, Maroc' },
-    { name: 'Pr. Oula AMROUNI', affiliation: 'INSTM, Université de Carthage, Tunisie' },
-    { name: 'Pr. Hamouda BOUTAGHANE', affiliation: "Université d'Annaba, Algérie" },
-    { name: 'Pr. Mohamed MEDDI', affiliation: "École Nationale Supérieure d'Hydraulique, Blida, Algérie" },
-    { name: 'Pr. Ansoumana BODIAN', affiliation: 'Université Gaston Berger, Saint-Louis, Sénégal' },
-    { name: 'Pr. Abdoulaye FATY', affiliation: 'Université Cheikh Anta Diop, Dakar, Sénégal' },
-    { name: 'Pr. Kouakou Lazare KOUASSI', affiliation: "Université Jean Lorougnon Guédé, Daloa, Côte d'Ivoire" },
-    { name: 'Pr. Valentin Brice EBODE', affiliation: 'Université de Yaoundé, Cameroun' },
-    { name: 'Pr. Raphaël TSHIMANGA', affiliation: 'Université de Kinshasa, RD Congo' },
-    { name: 'Pr. Hodson MAKURIRA', affiliation: 'Président IAHS Africa Committee, Université du Zimbabwe' },
-    { name: 'Pr. Natasha RIBEIRO', affiliation: 'Université Eduardo Mondlane, Maputo, Mozambique' },
-    { name: 'Pr. Cletah SHOKO', affiliation: 'Université du Witswatersrand, Johannesburg, Afrique du Sud' },
-    { name: 'Pr. Jane TANNER', affiliation: 'Université Rhodes, Grahamstown, Afrique du Sud' },
-    { name: 'Dr. Victor KONGO', affiliation: 'Consultant Banque Mondiale, Tanzanie' },
-    { name: 'Pr. Wakjira Takala DIBABA', affiliation: 'Université de Jimma, Éthiopie' },
+    { name: 'Pr. Ernest AMOUSSOU', affiliation: 'University of Parakou, Benin' },
+    { name: 'Pr. Moussa BOUKARI', affiliation: "University of Abomey-Calavi, Benin" },
+    { name: 'Pr. Expédit VISSIN', affiliation: "University of Abomey-Calavi, Benin" },
+    { name: 'Pr. Lahcen BENAABIDATE', affiliation: 'Sidi Mohamed Ben Abdellah University, Fez, Morocco' },
+    { name: 'Pr. Ilias KACIMI', affiliation: 'Mohammed V University, Rabat, Morocco' },
+    { name: 'Pr. Tarik BOURAMTANE', affiliation: 'Mohammed V University, Rabat, Morocco' },
+    { name: 'Pr. Oula AMROUNI', affiliation: 'INSTM, University of Carthage, Tunisia' },
+    { name: 'Pr. Hamouda BOUTAGHANE', affiliation: "University of Annaba, Algeria" },
+    { name: 'Pr. Mohamed MEDDI', affiliation: "National Higher School of Hydraulics, Blida, Algeria" },
+    { name: 'Pr. Ansoumana BODIAN', affiliation: 'Gaston Berger University, Saint-Louis, Senegal' },
+    { name: 'Pr. Abdoulaye FATY', affiliation: 'Cheikh Anta Diop University, Dakar, Senegal' },
+    { name: 'Pr. Kouakou Lazare KOUASSI', affiliation: "Jean Lorougnon Guédé University, Daloa, Côte d'Ivoire" },
+    { name: 'Pr. Valentin Brice EBODE', affiliation: 'University of Yaoundé, Cameroon' },
+    { name: 'Pr. Raphaël TSHIMANGA', affiliation: 'University of Kinshasa, DR Congo' },
+    { name: 'Pr. Hodson MAKURIRA', affiliation: 'President of IAHS Africa Committee, University of Zimbabwe' },
+    { name: 'Pr. Natasha RIBEIRO', affiliation: 'Eduardo Mondlane University, Maputo, Mozambique' },
+    { name: 'Pr. Cletah SHOKO', affiliation: 'University of the Witwatersrand, Johannesburg, South Africa' },
+    { name: 'Pr. Jane TANNER', affiliation: 'Rhodes University, Grahamstown, South Africa' },
+    { name: 'Dr. Victor KONGO', affiliation: 'World Bank Consultant, Tanzania' },
+    { name: 'Pr. Wakjira Takala DIBABA', affiliation: 'Jimma University, Ethiopia' },
     { name: 'Pr. Yves TRAMBLAY', affiliation: 'IRD, France' },
-    { name: 'Pr. Christel PRUDHOMME', affiliation: 'ECMWF, Reading, Royaume-Uni' },
+    { name: 'Pr. Christel PRUDHOMME', affiliation: 'ECMWF, Reading, United Kingdom' },
     { name: 'Pr. Damien RACLOT', affiliation: 'IRD, France' },
     { name: 'Pr. Roger MOUSSA', affiliation: 'INRAE, France' },
-    { name: 'Pr. Manuela GRIPPA', affiliation: 'Laboratoire GET, Toulouse, France' },
+    { name: 'Pr. Manuela GRIPPA', affiliation: 'GET Laboratory, Toulouse, France' },
     { name: 'Pr. Stéphanie DUVAIL', affiliation: 'IRD, UMR PALOC, Paris, France' },
     { name: 'Pr. Didier ORANGE', affiliation: 'IRD, France' },
-    { name: 'Pr. Eric SERVAT', affiliation: 'UNESCO ICIREWARD, Université de Montpellier, France' },
-    { name: 'Pr. Freddy VINET', affiliation: 'Université Paul Valéry, Montpellier, France' },
-    { name: 'Pr. Maria Carmen LLASAT', affiliation: 'Université de Barcelone, Espagne' },
-    { name: 'Pr. Sergio VICENTE-SERRANO', affiliation: 'Instituto Pirenaico de Ecología, Saragosse, Espagne' },
-    { name: 'Pr. Giulio CASTELLI', affiliation: 'Univ. degli Studi di Firenze, Italie' },
-    { name: 'Pr. Berit ARHEIMER', affiliation: 'SMHI, Norrköping, Suède' },
-    { name: 'Pr. Helmut HABERSACK', affiliation: 'Président UNESCO IHP, Vienne, Autriche' },
-    { name: 'Pr. Declan CONWAY', affiliation: 'Grantham Research Institute, Londres, Royaume-Uni' },
-    { name: 'Pr. Simon MISCHEL', affiliation: 'Global Runoff Data Center, Coblence, Allemagne' },
-    { name: 'Pr. Stephan DIETRICH', affiliation: 'Centre International UNESCO, Coblence, Allemagne' },
+    { name: 'Pr. Eric SERVAT', affiliation: 'UNESCO ICIREWARD, University of Montpellier, France' },
+    { name: 'Pr. Freddy VINET', affiliation: 'Paul Valéry University, Montpellier, France' },
+    { name: 'Pr. Maria Carmen LLASAT', affiliation: 'University of Barcelona, Spain' },
+    { name: 'Pr. Sergio VICENTE-SERRANO', affiliation: 'Instituto Pirenaico de Ecología, Zaragoza, Spain' },
+    { name: 'Pr. Giulio CASTELLI', affiliation: 'University of Florence, Italy' },
+    { name: 'Pr. Berit ARHEIMER', affiliation: 'SMHI, Norrköping, Sweden' },
+    { name: 'Pr. Helmut HABERSACK', affiliation: 'President of UNESCO IHP, Vienna, Austria' },
+    { name: 'Pr. Declan CONWAY', affiliation: 'Grantham Research Institute, London, United Kingdom' },
+    { name: 'Pr. Simon MISCHEL', affiliation: 'Global Runoff Data Center, Koblenz, Germany' },
+    { name: 'Pr. Stephan DIETRICH', affiliation: 'UNESCO International Centre, Koblenz, Germany' },
     { name: 'Pr. Rahim BARZEGAR', affiliation: 'RIME/GRG, UQAT, Canada' },
-    { name: 'Pr. Pedro CHAFFE', affiliation: 'Universidade Federal de Santa Catarina, Brésil' },
-    { name: 'Pr. Assefa MELESSE', affiliation: 'Florida International University, États-Unis' },
-    { name: 'Dr. Thi Phuong Quynh LE', affiliation: "Vietnam Academy of Science and Technology, Hanoï" },
-    { name: 'Pr. Abou AMANI', affiliation: "Directeur, Division des Sciences de l'Eau, UNESCO Paris" },
-    { name: 'Pr. Dominique BEROD', affiliation: 'OMM, Suisse' },
+    { name: 'Pr. Pedro CHAFFE', affiliation: 'Federal University of Santa Catarina, Brazil' },
+    { name: 'Pr. Assefa MELESSE', affiliation: 'Florida International University, United States' },
+    { name: 'Dr. Thi Phuong Quynh LE', affiliation: "Vietnam Academy of Science and Technology, Hanoi" },
+    { name: 'Pr. Abou AMANI', affiliation: "Director, Division of Water Sciences, UNESCO Paris" },
+    { name: 'Pr. Dominique BEROD', affiliation: 'WMO, Switzerland' },
   ],
 };
 
@@ -130,9 +130,9 @@ export default function CommitteePage() {
         <div className="container mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            COMITÉS
+            Conference <span className="font-accent italic font-medium">Committees</span>
           </h1>
         </div>
       </div>
@@ -147,11 +147,11 @@ export default function CommitteePage() {
               style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
             />
             <div>
-              <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                Comité d&apos;organisation
+              <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                Organizing Committee
               </h2>
               <p className="text-gray-400 text-sm">
-                {organizingCommittee.chairs.length + organizingCommittee.members.length} membres
+                {organizingCommittee.chairs.length + organizingCommittee.members.length} members
               </p>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function CommitteePage() {
                   >
                     {chair.role}
                   </span>
-                  <h3 className="font-bold text-[#02345e] text-base leading-tight mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <h3 className="font-bold text-[#02345e] text-base leading-tight mb-1" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                     {chair.name}
                   </h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{chair.affiliation}</p>
@@ -180,7 +180,7 @@ export default function CommitteePage() {
           {/* Member list */}
           <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wider text-[#058332] mb-4">
-              Membres ({organizingCommittee.members.length})
+              Members ({organizingCommittee.members.length})
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {orgToShow.map((member, i) => (
@@ -198,7 +198,7 @@ export default function CommitteePage() {
                 onClick={() => setShowAllOrg(!showAllOrg)}
                 className="mt-4 text-[#058332] text-xs font-semibold hover:underline flex items-center gap-1"
               >
-                {showAllOrg ? 'Voir moins' : `Voir les ${organizingCommittee.members.length - ORG_PREVIEW} autres membres`}
+                {showAllOrg ? 'Show less' : `Show the other ${organizingCommittee.members.length - ORG_PREVIEW} members`}
                 <svg className={`w-3.5 h-3.5 transition-transform ${showAllOrg ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -218,11 +218,11 @@ export default function CommitteePage() {
               style={{ background: 'linear-gradient(to bottom, #02345e, #058332)' }}
             />
             <div>
-              <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'var(--font-heading)' }}>
-                Comité scientifique
+              <h2 className="text-2xl font-extrabold text-[#02345e]" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                Scientific Committee
               </h2>
               <p className="text-gray-400 text-sm italic">
-                {scientificCommittee.chairs.length + scientificCommittee.members.length} membres · en cours d&apos;élaboration
+                {scientificCommittee.chairs.length + scientificCommittee.members.length} members · under development
               </p>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function CommitteePage() {
                   >
                     {chair.role}
                   </span>
-                  <h3 className="font-bold text-[#02345e] text-base leading-tight mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <h3 className="font-bold text-[#02345e] text-base leading-tight mb-1" style={{ fontFamily: 'DM Sans, sans-serif' }}>
                     {chair.name}
                   </h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{chair.affiliation}</p>
@@ -251,7 +251,7 @@ export default function CommitteePage() {
           {/* Member list */}
           <div className="bg-[#f4f7f9] rounded-2xl border border-gray-200 p-6 shadow-sm">
             <p className="text-xs font-bold uppercase tracking-wider text-[#02345e] mb-4">
-              Membres ({scientificCommittee.members.length})
+              Members ({scientificCommittee.members.length})
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {sciToShow.map((member, i) => (
@@ -269,7 +269,7 @@ export default function CommitteePage() {
                 onClick={() => setShowAllSci(!showAllSci)}
                 className="mt-4 text-[#02345e] text-xs font-semibold hover:underline flex items-center gap-1"
               >
-                {showAllSci ? 'Voir moins' : `Voir les ${scientificCommittee.members.length - SCI_PREVIEW} autres membres`}
+                {showAllSci ? 'Show less' : `Show the other ${scientificCommittee.members.length - SCI_PREVIEW} members`}
                 <svg className={`w-3.5 h-3.5 transition-transform ${showAllSci ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>

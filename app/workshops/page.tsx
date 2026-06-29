@@ -19,12 +19,12 @@ const workshops: Workshop[] = [
   {
     num: 1,
     title:
-      "Digitalisation et valorisation des savoirs traditionnels de gestion de l'eau face à la pénurie en Afrique : Culture, Patrimoine et Perspectives",
+      "Digitalization and Valorization of Traditional Water Management Knowledge Facing Scarcity in Africa: Culture, Heritage and Perspectives",
     moderators: [
       {
         name: 'Dr. Hanane BENQLILOU',
         affiliation:
-          "Experte Eau, Énergie et Environnement — Institut National de l'Eau et de l'Assainissement IEA-ONEE / Fondation MiftahEssad pour le Capital Immatériel du Maroc",
+          "Water, Energy & Environment Expert — National Institute of Water and Sanitation IEA-ONEE / MiftahEssad Foundation for the Intangible Capital of Morocco",
         photo:
           'https://icar2026.org/wp-content/uploads/2026/01/Photo-Hanane-SIEL-2024-1.jpg',
       },
@@ -32,33 +32,19 @@ const workshops: Workshop[] = [
     content: (
       <div className="space-y-4 text-gray-700 text-sm leading-[1.8]">
         <p>
-          Le Maroc dispose d&apos;un riche patrimoine de savoirs ancestraux liant eau,
-          énergie, agriculture et écosystèmes — développé au fil des siècles pour
-          s&apos;adapter au climat semi-aride et aux défis de pénurie d&apos;eau. Among the most
-          remarkable traditional water systems are the <strong>Khettara</strong> and the
-          ancient sewage systems of Fès.
+          Morocco has a rich heritage of ancestral knowledge linking water, energy, agriculture, and ecosystems — developed over centuries to adapt to the semi-arid climate and water scarcity challenges. Among the most remarkable traditional water systems are the <strong>Khettara</strong> and the ancient sewage systems of Fez.
         </p>
         <p>
-          La <strong>Khettara</strong> est un système souterrain ingénieux de captage et
-          d&apos;acheminement de l&apos;eau par gravité, prouvant son efficacité depuis des siècles
-          dans la gestion durable des ressources en eau.
+          The <strong>Khettara</strong> is an ingenious underground system for capturing and conveying water by gravity, proving its effectiveness for centuries in the sustainable management of water resources.
         </p>
         <p>
-          Le <strong>système hydraulique ancestral de Fès</strong> représente un autre
-          exemple remarquable de gestion traditionnelle de l&apos;eau, permettant le recyclage
-          de l&apos;eau à travers des activités spirituelles, économiques et domestiques.
+          The <strong>ancestral hydraulic system of Fez</strong> represents another remarkable example of traditional water management, allowing water recycling through spiritual, economic, and domestic activities.
         </p>
         <p>
-          Aujourd&apos;hui, il est urgent de capitaliser sur le patrimoine hydrique africain en
-          utilisant les nouvelles technologies. Cet atelier vise à Explorer les opportunités
-          de <strong>Partenariat Sud-Sud</strong> entre pays africains pour partager les
-          savoirs traditionnels de l&apos;eau.
+          Today, there is an urgent need to capitalize on African water heritage using new technologies. This workshop aims to explore <strong>South-South Partnership</strong> opportunities between African countries to share traditional water knowledge.
         </p>
         <p className="mt-4">
-          <strong>Mots-clés :</strong> Systèmes hydrauliques traditionnels, Khettara,
-          réseaux d&apos;assainissement anciens, solutions fondées sur la nature, changement
-          climatique, régions semi-arides, stress hydrique, collecte des eaux pluviales,
-          écosystèmes, Culture, Patrimoine, Partenariat Sud-Sud.
+          <strong>Keywords:</strong> Traditional hydraulic systems, Khettara, ancient sewerage networks, nature-based solutions, climate change, semi-arid regions, water stress, rainwater harvesting, ecosystems, Culture, Heritage, South-South Partnership.
         </p>
       </div>
     ),
@@ -66,12 +52,12 @@ const workshops: Workshop[] = [
   {
     num: 2,
     title:
-      "De la donnée à l'action : Construire la chaîne de valeur pour répondre aux défis climatiques et hydrologiques",
+      "From Data to Action: Building the Value Chain to Address Climate and Hydrological Challenges",
     moderators: [
       {
         name: 'Dr. Dominique BEROD',
         affiliation:
-          "Chef de la section Surveillance hydrologique et gestion des données — Organisation Météorologique Mondiale (OMM)",
+          "Head of Hydrological Monitoring and Data Management Section — World Meteorological Organization (WMO)",
         photo:
           'https://icar2026.org/wp-content/uploads/2026/01/photo-D-Berod-2022-bis.jpeg',
       },
@@ -79,13 +65,10 @@ const workshops: Workshop[] = [
     content: (
       <div className="space-y-4 text-gray-700 text-sm leading-[1.8]">
         <p>
-          Cet atelier se concentre sur l&apos;identification des besoins en matière de
-          surveillance et l&apos;exploration des moyens de garantir une chaîne
-          données-décisions durable, couvrant la modélisation et la prévision
-          hydrologiques.
+          This workshop focuses on identifying monitoring needs and exploring ways to ensure a sustainable data-to-decision chain, covering hydrological modeling and forecasting.
         </p>
         <p className="text-[#058332] font-semibold italic">
-          Plus de détails à venir prochainement.
+          More details coming soon.
         </p>
       </div>
     ),
@@ -97,7 +80,7 @@ const workshops: Workshop[] = [
       {
         name: 'Dr. Fairouz MEGDICHE KHARRAT',
         affiliation:
-          "Maître-assistante en architecture et urbanisme, Université de Sousse / Chercheure au GADEV/UMRAN, Membre du groupe CCWK, Tunisie",
+          "Assistant Professor in Architecture and Urbanism, University of Sousse / Researcher at GADEV/UMRAN, CCWK Group Member, Tunisia",
         photo:
           'https://icar2026.org/wp-content/uploads/2026/01/Fairouz-IDPhoto.jpeg',
       },
@@ -105,35 +88,24 @@ const workshops: Workshop[] = [
     content: (
       <div className="space-y-4 text-gray-700 text-sm leading-[1.8]">
         <p>
-          <strong>Obj. 1 :</strong> Définir la co-création et l&apos;introduire dans le
-          contexte de la connaissance de l&apos;eau — approche collaborative où des parties
-          prenantes diverses génèrent ensemble des solutions aux défis hydriques.
+          <strong>Obj. 1:</strong> Define co-creation and introduce it in the context of water knowledge — a collaborative approach where diverse stakeholders jointly generate solutions to water challenges.
         </p>
         <p>
-          <strong>Obj. 2 :</strong> Présenter la vision et la mission du groupe CCWK, ses
-          objectifs à court et long terme, sa méthodologie et son processus.
+          <strong>Obj. 2:</strong> Present the vision and mission of the CCWK group, its short-term and long-term objectives, its methodology and process.
         </p>
         <p>
-          <strong>Obj. 3 :</strong> Ouvrir le dialogue en connectant différents acteurs dans
-          le contexte africain et au-delà — chercheurs, décideurs, praticiens et
-          communautés locales.
+          <strong>Obj. 3:</strong> Open dialogue by connecting different actors in the African context and beyond — researchers, decision-makers, practitioners, and local communities.
         </p>
         <p>
-          <strong>Obj. 4 :</strong> Partager des études de cas démontrant des approches de
-          co-création réussies dans la gestion de l&apos;eau à travers différents contextes
-          africains.
+          <strong>Obj. 4:</strong> Share case studies demonstrating successful co-creation approaches in water management across various African contexts.
         </p>
         <p>
-          <strong>Obj. 5 :</strong> Inspirer les acteurs scientifiques, institutionnels et
-          sociaux à adopter les 4 piliers de la co-création :{' '}
-          <strong>Inclusivité</strong>, <strong>Ouverture</strong>,{' '}
-          <strong>Légitimité</strong> &amp; <strong>Actionnabilité</strong>.
+          <strong>Obj. 5:</strong> Inspire scientific, institutional, and social stakeholders to adopt the 4 pillars of co-creation:{' '}
+          <strong>Inclusivity</strong>, <strong>Openness</strong>,{' '}
+          <strong>Legitimacy</strong> &amp; <strong>Actionability</strong>.
         </p>
         <p className="mt-2">
-          Cet atelier sera animé par trois membres du groupe CCWK dans le cadre de la
-          décennie HELPING de l&apos;IAHS. Le format inclura des activités interactives :
-          débats, sessions de collecte d&apos;informations et exercice de constellation des
-          parties prenantes.
+          This workshop will be facilitated by three members of the CCWK group as part of the IAHS HELPING decade. The format will include interactive activities: debates, information collection sessions, and a stakeholder mapping exercise.
         </p>
       </div>
     ),
@@ -141,29 +113,27 @@ const workshops: Workshop[] = [
   {
     num: 4,
     title:
-      "Défis, enjeux et opportunités de l'Économie Bleue dans les pays en développement : vers une gestion intégrée des ressources en eau",
+      "Challenges, Issues, and Opportunities of the Blue Economy in Developing Countries: Towards Integrated Water Resources Management",
     moderators: [
       {
         name: 'M. Ernest TINDO',
-        affiliation: 'Expert en Économie Bleue et gestion des ressources aquatiques',
+        affiliation: 'Blue Economy & Aquatic Resources Management Expert',
         photo:
           'https://icar2026.org/wp-content/uploads/2026/02/Photo-1-Ernest-TINDO-scaled-e1771315066166.jpg',
       },
       {
         name: 'Dr. Asmaa BENSLIMANE',
-        affiliation: "Chercheure en gestion intégrée des ressources en eau, Maroc",
+        affiliation: "Researcher in Integrated Water Resources Management, Morocco",
         photo: 'https://icar2026.org/wp-content/uploads/2026/02/Photo-Dr-Asmaa.jpg',
       },
     ],
     content: (
       <div className="space-y-4 text-gray-700 text-sm leading-[1.8]">
         <p>
-          L&apos;Économie Bleue représente une approche intégrée qui considère l&apos;eau, les
-          océans, les lacs et les rivières comme des vecteurs de développement durable et
-          de prospérité économique pour les pays en développement.
+          The Blue Economy represents an integrated approach that considers water, oceans, lakes, and rivers as drivers of sustainable development and economic prosperity for developing countries.
         </p>
         <p className="text-[#058332] font-semibold italic">
-          Plus de détails à venir prochainement.
+          More details coming soon.
         </p>
       </div>
     ),
@@ -209,9 +179,9 @@ export default function WorkshopsPage() {
         <div className="container mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider"
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'DM Sans, sans-serif' }}
           >
-            ATELIERS DE DISCUSSION
+            Discussion <span className="font-accent italic font-medium">Workshops</span>
           </h1>
         </div>
       </div>
@@ -232,11 +202,11 @@ export default function WorkshopsPage() {
                 style={{ background: 'linear-gradient(to right, #02345e, #058332)' }}
               >
                 <span className="text-white/60 text-xs font-bold uppercase tracking-widest">
-                  Atelier {workshop.num}
+                  Workshop {workshop.num}
                 </span>
                 <h2
                   className="text-lg md:text-xl font-bold text-white mt-1 leading-snug"
-                  style={{ fontFamily: 'var(--font-heading)' }}
+                  style={{ fontFamily: 'DM Sans, sans-serif' }}
                 >
                   {workshop.title}
                 </h2>
@@ -257,7 +227,7 @@ export default function WorkshopsPage() {
                       href="/moderators"
                       className="px-4 py-1.5 rounded-full bg-[#058332] text-white text-xs font-semibold hover:bg-[#046c2a] transition-colors"
                     >
-                      Plus de détails
+                      More Details
                     </Link>
                   </div>
                 </div>
